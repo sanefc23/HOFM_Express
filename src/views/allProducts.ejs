@@ -1,0 +1,27 @@
+<%- include('partials/head.ejs') %>
+
+<div class="background">
+    <%- include('partials/nav-bar.ejs') %>
+    <div class="frame">
+        <h2 id="catalog-title">Catálogo completo</h2>
+        <div class="catalog">
+            <% for (let i = 0; i < allProducts.length; i++) { %>
+            <section class="product">
+                <a href="/products/<%= allProducts[i].id%>">
+                    <img id="album-cover" src="<%= allProducts[i].frontCover %>" alt="" />
+                </a>
+                <h5 id="artist"><%= allProducts[i].artist %></h5>
+                <h5 id="album"><%= allProducts[i].title %></h5>
+                <form action="/products/all/delete/<%= allProducts[i].id %>?_method=DELETE" method="POST">
+                    <button id="delete">Eliminar</button>
+                </form>
+            </section>
+            <% } %>
+        </div>
+    </div>
+    <%- include('partials/footer.ejs') %>
+</div>
+<script src="/js/navapp.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+body {
+    color: #484848;
+    overflow: hidden;
+}
+
+.input-hint {
+    font-size: 2.0vh;
+    padding-bottom: 0.1vh;
+}
+
+.price-box::placeholder {
+    color: #484848;
+    font-size: 1.6vh;
+    text-align: center;
+}
+
+#header {
+    display: block;
+    justify-content: center;
+}
+
+.form-frame {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 2vw;
+}
+
+.text-box {
+    width: 100%;
+}
+
+#editar {
+    background-color: rgba(0, 190, 159, 0.85);
+    border: none;
+    color: white;
+}
+
+#cancelar {
+    background-color: rgba(230, 100, 100, 0.85);
+    border: none;
+    color: white;
+}
+
+#editar:hover {
+    background-color: rgb(0, 190, 158);
+    border: none;
+    color: white;
+}
+
+#cancelar:hover {
+    background-color: rgb(230, 100, 100);
+    border: none;
+    color: white;
+}
+
+@media (max-width: 425px) {
+    #frame {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 75vh;
+    }
+}
+
+@media (max-width: 768px) {}
+
+@media (min-width: 769px) {
+    .edit-form {
+        display: flex;
+        justify-content: center;
+    }
+    .form-frame {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 30vw;
+    }
+    .field {
+        width: 100%;
+        margin-bottom: 1vh;
+    }
+    #action-buttons {
+        display: flex;
+        justify-content: center;
+    }
+}

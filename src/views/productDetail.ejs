@@ -1,0 +1,52 @@
+<%- include('partials/head.ejs') %>
+<div class="background">
+    <%- include('partials/nav-bar.ejs') %>
+    <div class="frame">
+        <div class="child-frame1">
+            <div>
+                <h1><%= album.title %></h1>
+                <h3><%= album.artist %></h3>
+                <p id="description">
+                    <%= album.description %>
+                </p>
+            </div>
+            <div class="row-mini-cards">
+                <div id="valoracion" class="info-mini-cards">
+                    <label class="info">Valoración</label>
+                </div>
+                <div id="formatos" class="info-mini-cards">
+                    <select class="format-picker" name="format">
+                        <option class="format-list" value="CD">CD</option>
+                        <option class="format-list" value="DVD">DVD</option>
+                        <option class="format-list" value="vinilo">Vinilo</option>
+                    </select>
+                </div>
+                <div id="price" class="info-mini-cards">
+                    <label class="info">$780</label>
+                </div>
+                <div id="addToCart" class="info-mini-cards">
+                    <label class="info">Comprar</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div id="album-covers" class="col-12">
+                    <img class="col-6" src="<%= album.frontCover %>" alt="">
+                    <img class="col-6" src="<%= album.backCover %>" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="child-frame2">
+            <ul class="tracklist">
+                <% for (let i = 0; i < album.tracklist.length; i++) {%>
+                <li><%= album.tracklist[i] %></li>
+                <% } %>
+            </ul>
+        </div>
+    </div>
+    <%- include('partials/footer.ejs') %>
+</div>
+</body>
+
+</html>

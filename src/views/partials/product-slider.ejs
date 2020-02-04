@@ -1,0 +1,11 @@
+<div class="wrapper">
+    <% for (let i = 0; i < novedades.length; i++) { %>
+    <section class="product">
+        <a href="/products/<%=novedades[i].id%>">
+            <img id="album-cover" src="<%= novedades[i].frontCover %>" alt="" />
+        </a>
+        <h5 id="artist"><%= novedades[i].artist %></h5>
+        <h5 id="album"><%= novedades[i].title %></h5>
+    </section>
+    <% } %>
+</div>

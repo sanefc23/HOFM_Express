@@ -1,0 +1,57 @@
+<%- include('partials/head.ejs') %>
+<div class="background">
+    <%- include('partials/nav-bar.ejs') %>
+    <div id="frame" class="col-8">
+        <h3 id="section">Tus productos</h3>
+        <div id="cartItem" class="row">
+            <img class="col-2" id="album-cover" src="/images/albums/masseduction.jpg" alt="" />
+            <div id="title" class="col-3">
+                <h3>St. Vincent</h3>
+                <p>Masseduction</p>
+            </div>
+            <div id="containers" class="col-6">
+                <div id="formatos">
+                    <p>Vinilo</p>
+                </div>
+                <div id="cantidad">
+                    <p>Cantidad</p>
+                </div>
+                <div id="precio">
+                    <p>$650</p>
+                </div>
+            </div>
+            <img id="delete_item" class="col-1" src="/images/delete_item.png" alt="">
+        </div>
+        <div id="cartItem" class="row">
+            <img class="col-2" id="album-cover" src="/images/albums/masseduction.jpg" alt="" />
+            <div id="title" class="col-3">
+                <h3>St. Vincent</h3>
+                <p>Masseduction</p>
+            </div>
+            <div id="containers" class="col-6">
+                <div id="formatos">
+                    <p>Vinilo</p>
+                </div>
+                <div id="cantidad">
+                    <p>Cantidad</p>
+                </div>
+                <div id="precio">
+                    <p>$650</p>
+                </div>
+            </div>
+            <img id="delete_item" class="col-1" src="/images/delete_item.png" alt="">
+        </div>
+        <div id="price">
+            <hr>
+            <h1 id="section">Total: $1.300.-</h1>
+        </div>
+    </div>
+    <div id="action-buttons" class="row">
+        <button id="go-back" class="col-2">Seguir Comprando</button>
+        <button id="buy" class="col-2">Confirmar Compra</button>
+    </div>
+    <%- include('partials/footer.ejs') %>
+</div>
+</body>
+
+</html>

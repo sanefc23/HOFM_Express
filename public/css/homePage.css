@@ -1,0 +1,72 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+}
+
+.frame {
+  padding: 0em 2em;
+}
+
+#banner {
+  display: flex;
+  justify-content: center;
+}
+
+#title {
+  font-size: 2.5vw;
+  font-weight: normal;
+}
+
+#catalog-title {
+  font-size: 2vw;
+  font-weight: normal;
+  margin-left: 0.3vw;
+  margin-top: 1.4vh;
+}
+
+.catalog {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  padding: 0;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.product {
+  margin-right: 0.7em;
+  margin-bottom: 1.8em;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+#album-cover {
+  width: 15vw;
+}
+
+#artist, #album {
+  font-size: 2vh;
+  margin: 2px;
+}
+
+#artist {
+  font-weight: bold;
+}
+
+#delete {
+  background-color: rgba(230, 100, 100, 0.85);
+  color: white;
+  height: 5vh;
+  width: 15vw;
+  border: none;
+  border-radius: 2px;
+}
+
+#delete:hover {
+  background-color: rgb(230, 100, 100);
+}
+
+@media(min-width: 426px) {}

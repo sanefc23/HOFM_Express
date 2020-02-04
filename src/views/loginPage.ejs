@@ -1,0 +1,40 @@
+<%- include('partials/head.ejs') %>
+<div class="background">
+    <%- include('partials/nav-bar.ejs') %>
+    <form action="/users/login" method="POST">
+        <div class="frame">
+
+            <img class="register-image" src="/images/concert-login.jpg" alt="">
+            <div class="register-form">
+                <h4 id="login-title">Ingresá tu datos</h4>
+                <div class="form-frame">
+                    <label class="input-hint">Email</label>
+                    <input class="text-box" type="email" name="email">
+                    <label class="input-hint">Contraseña</label>
+                    <input class="text-box" type="password" name="password">
+                    <div>
+                        <label>Recordarme</label>
+                        <input type="checkbox" name="rememberMe">
+                    </div>
+                </div>
+
+                <% if (typeof registerErrors != 'undefined'){ %>
+                <ul>
+                    <% for (let i = 0; i < registerErrors.length; i++) {%>
+                    <li class="errors"><%= registerErrors[i].msg %> </li>
+                    <% }; %>
+                </ul>
+                <% } %>
+            </div>
+            <div id="action-buttons" class="row">
+                <button id="recover-password">Olvidé mi contraseña</button>
+                <button id="login" type="submit">Ingresar</button>
+            </div>
+        </div>
+    </form>
+
+    <%- include('partials/footer.ejs') %>
+</div>
+</body>
+
+</html>

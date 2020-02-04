@@ -1,0 +1,32 @@
+<header>
+    <div class="container">
+        <a href="/" class="logo-button"><img id="logo" href="/" src="/images/logo2.png" alt=""></a>
+    </div>
+    <nav id="site-nav" class="site-nav">
+        <ul>
+            <li><a href=""><i class="fas fa-play site-nav--icon"></i>CD</a></li>
+            <li><a href=""><i class="fas fa-pause site-nav--icon"></i>Vinilo</a></li>
+            <li><a href=""><i class="fas fa-step-forward site-nav--icon"></i>DVD</a></li>
+            <li><a href=""><i class="fas fa-stop site-nav--icon"></i>Género</a></li>
+            <li><a href=""><i class="fas fa-search site-nav--icon"></i>
+                    <input class="searchBar" type="search" placeholder="Buscar por título o autor..."></a></li>
+        </ul>
+    </nav>
+    <div id="menu-toggle" class="menu-toggle" onClick="cambiarClase()">
+        <div class="hamburger"></div>
+    </div>
+
+    <nav id="site-nav2" class="site-nav2">
+        <ul>
+            <li><a href="/users/register" class="user navbar-brand">Registrarse</a></li>
+            <li><a href="/users/login" class="user navbar-brand">Ingresar</a></li>
+        </ul>
+    </nav>
+    <div id="menu-toggle2" class="menu-toggle2" onClick="cambiarClase2()">
+        <img id="user-icons" src="/images/user.png">
+        <a href="/products/cart">
+            <img id="user-icons" src="/images/cart.png" alt="">
+        </a>
+    </div>
+</header>
+<script src="/js/navapp.js"></script>

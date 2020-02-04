@@ -1,0 +1,44 @@
+<%- include('partials/head.ejs') %>
+<div class="background">
+    <%- include('partials/nav-bar.ejs') %>
+    <form action="/userEdit" method="POST">
+        <div class="frame">
+            <div class="edit-form">
+                <div class="form-frame">
+                    <h2 id="header">Editar usuario</h2>
+                    <div class="field">
+                        <label class="input-hint">Nombre</label>
+                        <input class="text-box" type="text" name="name" value="<%= userToEdit.name %>">
+                    </div>
+                    <div class="field">
+                        <label class="input-hint">Apellido</label>
+                        <input class="text-box" type="text" name="lastName" value="<%= userToEdit.lastName %>">
+                    </div>
+                    <div class="field">
+                        <label class="input-hint">Domicilio Postal</label>
+                        <input class="text-box" type="text" name="adress" value="<%= userToEdit.adress %>">
+                    </div>
+                    <div class="field">
+                        <label class="input-hint">Contraseña</label>
+                        <input class="text-box" type="password" name="password">
+                    </div>
+                    <div class="field">
+                        <label class="input-hint">Confirmar Contraseña</label>
+                        <input class="text-box" type="password" name="verification">
+                    </div>
+                </div>
+            </div>
+            <div id="action-buttons" class="row">
+                <button id="cancelar" class="col-3" type="submit">Cancelar</button>
+                <button id="editar" class="col-3">Editar</button>
+            </div>
+
+        </div>
+
+    </form>
+
+    <%- include('partials/footer.ejs') %>
+</div>
+</body>
+
+</html>

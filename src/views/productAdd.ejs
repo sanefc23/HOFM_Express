@@ -1,0 +1,70 @@
+<%- include('partials/head.ejs') %>
+<div class="background">
+    <%- include('partials/nav-bar.ejs') %>
+    <form action="/products/add" method="POST">
+        <div class="frame">
+            <div class="input-cover-frame">
+                <div class="input-frontcover-card">
+                    <img id="add-album-icon" src="/images/add-album-cover.png" alt="">
+                    <label class="input-hint">Front Cover</label>
+                    <!-- <input type="file" name="frontCover"> -->
+                </div>
+                <div class="input-backcover-card">
+                    <img id="add-album-icon" src="/images/add-album-cover.png" alt="">
+                    <label class="input-hint">Back Cover</label>
+                    <!-- <input type="file" name="backCover"> -->
+                </div>
+            </div>
+            <div class="input-info-card">
+                <div class="input-frame">
+                    <label class="input-hint">Artista</label>
+                    <input class="text-box" type="text" name="artist">
+                    <label class="input-hint">Album</label>
+                    <input class="text-box" type="text" name="title">
+                    <label class="input-hint">Descripción</label>
+                    <textarea class="textarea-box" type="text" name="description"></textarea>
+                    <label class="input-hint">Formatos y Precios</label>
+                    <div class="formats">
+                        <input class="price-box" type="number" name="precioCD" placeholder="$ CD">
+                        <input class="price-box" type="number" name="precioDVD" placeholder="$ DVD">
+                        <input class="price-box" type="number" name="precioVinilo" placeholder="$ VINILO">
+                    </div>
+                    <label class="input-hint">Información Adicional</label>
+                    <div class="formats">
+                        <input class="price-box" type="number" name="rating" placeholder="Valoración">
+                        <input class="price-box" type="number" name="stock" placeholder="Stock">
+                        <input class="price-box" type="date" name="released" placeholder="">
+                    </div>
+                </div>
+            </div>
+            <div class="input-tracklist-card">
+                <div class="tracklist-frame">
+                    <div class="tracklist">
+                        <ul style="list-style: none;">
+                            <% for (let i = 0; i < tracklist.length; i++) { %>
+                            <li class="track"><%= tracklist[i] %></li>
+                            <% } %>
+                        </ul>
+                    </div>
+                </div>
+                <div class="input-tracklist-frame">
+                    <label class="input-hint">Ingrese track:</label>
+                    <div class="formats">
+                        <input id="newTrack" class="add-track-text-box" type="text" name="track">
+                        <button id="add-track" onclick="pushToTracklist">+</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button id="add-btn" type="submit" onclick="pushAlbumToJSON">Agregar album</button>
+    </form>
+    <%- include('partials/footer.ejs') %>
+</div>
+
+<script>
+
+</script>
+
+</body>
+
+</html>

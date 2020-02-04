@@ -1,0 +1,232 @@
+/*---------Navbar-------*/
+
+.container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+#logo {
+    height: 6vh;
+    margin: 3px;
+}
+
+header {
+    background-color: rgba(27, 27, 27, 0.7);
+    position: relative;
+}
+
+header::after {
+    content: '';
+    clear: both;
+    display: block;
+}
+
+.site-nav {
+    top: 100%;
+    left: 0;
+    position: absolute;
+    background: rgb(27, 27, 27);
+    clip-path: circle(0px at top left);
+    transition: clip-path ease-in-out 500ms;
+}
+
+.site-nav-open {
+    clip-path: circle(150% at top left);
+    z-index: 1;
+}
+
+.menu-toggle2 {
+    display: inline-block;
+    position: absolute;
+    top: .5em;
+    right: 15px;
+}
+
+.user {
+    color: inherit;
+    font-size: 1vw;
+}
+
+#user-icons {
+    height: 4.5vh;
+    margin-left: 0.6em
+}
+
+.site-nav2 {
+    top: 100%;
+    right: 0;
+    position: absolute;
+    display: flex;
+    background: rgb(27, 27, 27);
+    clip-path: circle(0px at top right);
+    transition: clip-path ease-in-out 700ms;
+}
+
+.site-nav-open2 {
+    clip-path: circle(150% at top right);
+    z-index: 1;
+}
+
+.site-nav ul, .site-nav2 ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.site-nav li, .site-nav2 li {
+    border-bottom: 1px solid #575766;
+    font-size: 2vh;
+}
+
+.site-nav li, .site-nav2 li:last-child {
+    border-bottom: none;
+}
+
+.site-nav a {
+    color: white;
+    display: block;
+    padding: 1em 1em;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.site-nav a:hover, .site-nav a:focus, .site-nav2 a:hover, .site-nav2 a:focus {
+    background: rgba(255, 255, 255, 0.7);
+    color: #484848;
+    text-decoration: none;
+}
+
+.site-nav2 a {
+    color: white;
+    display: block;
+    padding: 2em 2em;
+    font-size: 2vh;
+    margin: 0;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.site-nav--icon {
+    display: inline-block;
+    font-size: 1.5em;
+    margin-right: 1em;
+    width: 1.1em;
+    text-align: right;
+    color: rgba(255, 255, 255, .4);
+}
+
+.searchBar {
+    border: none;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.searchBar::placeholder {
+    font-size: 1.5vw;
+}
+
+.menu-toggle {
+    position: absolute;
+    top: 1.4em;
+    left: 1em;
+}
+
+.menu-open .hamburger {
+    transform: rotate(45deg);
+}
+
+.menu-open .hamburger::before {
+    opacity: 0;
+}
+
+.menu-open .hamburger::after {
+    transform: translateY(-3px) rotate(-90deg);
+}
+
+.hamburger, .hamburger::before, .hamburger::after {
+    content: '';
+    display: block;
+    background: #ebebd3;
+    height: 3px;
+    width: 1.75em;
+    border-radius: 3px;
+    transition: all ease-in-out 500ms;
+}
+
+.hamburger::before {
+    transform: translateY(-6px);
+}
+
+.hamburger::after {
+    transform: translateY(3px);
+}
+
+@media (min-width:769px) {
+    .container {
+        display: inline;
+    }
+    #user-icons {
+        height: 6vh;
+        padding: 0.5vh;
+    }
+    .menu-toggle {
+        display: none;
+    }
+    .menu-toggle2 {
+        display: inline-block;
+        top: 2px;
+    }
+    .site-nav {
+        display: inline-flex;
+        position: relative;
+        top: 2px;
+        background: transparent;
+        margin-left: 20px;
+        clip-path: initial;
+    }
+    .site-nav2 {
+        display: inline-flex;
+        align-items: center;
+        position: relative;
+        background: transparent;
+        margin-left: -150px;
+        clip-path: initial;
+    }
+    .site-nav li {
+        display: inline-block;
+        border: none;
+    }
+    .site-nav a {
+        font-size: 1vw;
+        padding: .5em;
+        margin-left: 15px;
+    }
+    .site-nav2 li {
+        display: inline-block;
+        border: none;
+    }
+    .site-nav2 a {
+        font-size: 1vw;
+        padding: .5em;
+        position: relative;
+        left: 24vw;
+        top: 2px;
+        padding-right: 10px;
+    }
+    .site-nav a:hover, .site-nav a:focus, .site-nav2 a:hover, .site-nav2 a:focus {
+        background: rgba(255, 255, 255, 0.7);
+        color: #484848;
+        text-decoration: none;
+        border-radius: 10px;
+    }
+    .searchBar {
+        width: 15vw;
+    }
+    .searchBar::placeholder {
+        padding: 5px;
+        font-size: 1vw;
+    }
+}

@@ -1,0 +1,110 @@
+body {
+    color: #484848;
+    overflow: hidden;
+}
+
+.frame {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4vh;
+}
+
+#login-title {
+    font-size: 2.5vh;
+    margin-top: 0;
+}
+
+.errors {
+    color: rgb(230, 100, 100);
+    font-size: 2vh;
+    font-weight: 700;
+}
+
+#login {
+    background-color: rgba(0, 190, 159, 0.85);
+}
+
+#recover-password {
+    background-color: rgba(230, 100, 100, 0.85);
+}
+
+#login:hover {
+    background-color: rgb(0, 190, 158);
+}
+
+#recover-password:hover {
+    background-color: rgb(230, 100, 100);
+}
+
+@media(max-width: 425px) {}
+
+@media(max-width: 768px) {
+    .register-image {
+        display: none;
+    }
+    .register-form {
+        width: 90vh;
+    }
+    .text-box {
+        height: 4.5vh;
+        width: 70vw;
+    }
+    #login, #register {
+        font-size: 2vw;
+        width: 40vw;
+    }
+}
+
+@media(min-width: 769px) {
+    .register-image {
+        width: 32vw;
+        border-radius: 20px 20px 0px 0px;
+    }
+    .register-form {
+        background-color: rgba(255, 255, 255, 0.7);
+        height: 33vh;
+        width: 32vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .form-frame {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .input-hint {
+        display: inline-block;
+        font-size: 1vw;
+        padding-bottom: 0.5vh;
+        font-weight: normal;
+    }
+    .text-box {
+        height: 4.5vh;
+        width: 20vw;
+        border: none;
+        background-color: rgba(255, 255, 255, 0.7);
+        border-radius: 0.8vh;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 1.2em;
+    }
+    #action-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    #login, #recover-password {
+        color: white;
+        font-size: 2vh;
+        border: none;
+        height: 6vh;
+        width: 16vw;
+        border-radius: 0px 0px 20px 20px;
+    }
+}
