@@ -25,15 +25,18 @@
                     <textarea class="textarea-box" type="text" name="description"></textarea>
                     <label class="input-hint">Formatos y Precios</label>
                     <div class="formats">
-                        <input class="price-box" type="number" name="precioCD" placeholder="$ CD">
-                        <input class="price-box" type="number" name="precioDVD" placeholder="$ DVD">
-                        <input class="price-box" type="number" name="precioVinilo" placeholder="$ VINILO">
+                        <select class="price-box" name="format" id="format">
+                            <option value="cd">CD</option>
+                            <option value="dvd">DVD</option>
+                            <option value="vinilo">Vinilo</option>
+                        </select>
+                        <input class="price-box" type="number" name="price" placeholder="$">
                     </div>
                     <label class="input-hint">Información Adicional</label>
                     <div class="formats">
-                        <input class="price-box" type="number" name="rating" placeholder="Valoración">
-                        <input class="price-box" type="number" name="stock" placeholder="Stock">
-                        <input class="price-box" type="date" name="released" placeholder="">
+                        <input class="info-box" type="number" name="rating" placeholder="Valoración">
+                        <input class="info-box" type="number" name="stock" placeholder="Stock">
+                        <input class="info-box" type="date" name="released" placeholder="">
                     </div>
                 </div>
             </div>

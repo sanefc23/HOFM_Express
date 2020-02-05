@@ -79,8 +79,8 @@ body {
     justify-content: space-between;
 }
 
-.price-box {
-    width: 30%;
+.price-box, .info-box {
+    width: 48%;
     height: 4.5vh;
     border: none;
     font-family: 'Montserrat', sans-serif;
@@ -89,6 +89,10 @@ body {
     border-radius: 0.8vh;
     text-align: center;
     padding: 1vh;
+}
+
+.info-box {
+    width: 30%
 }
 
 .price-box::placeholder {

@@ -3,20 +3,8 @@
         "id": 1,
         "title": "Norman Fucking Rockwell",
         "artist": "Lana del Rey",
-        "formats": [
-            {
-                "CD": true,
-                "price": 744
-            },
-            {
-                "DVD": false,
-                "price": 0
-            },
-            {
-                "vinilo": true,
-                "price": 2400
-            }
-        ],
+        "format": "CD",
+        "price": 765,
         "frontCover": "/images/albums/lana.jpg",
         "backCover": "/images/albums/lana2.jpeg",
         "description": "Norman Fucking Rockwell, lanzado el 30 de agosto de 2019, es el sexto álbum de estudio de la cantante estadounidense Lana Del Rey. Fue co-producido con Jack Antonoff y cuentacontribuciones adicionales de Zach Dawes, Andrew Watt y el antiguo colaborador de Lana, Rick Nowels. Musicalmente, Norman Fucking Rockwell se compone de jams de psic-rock, baladas de piano​ y presenta referencias a varios artistas de rock clásico.",
@@ -45,20 +33,8 @@
         "id": 2,
         "title": "Cause and Effect",
         "artist": "Keane",
-        "formats": [
-            {
-                "CD": true,
-                "price": 744
-            },
-            {
-                "DVD": false,
-                "price": 0
-            },
-            {
-                "vinilo": true,
-                "price": 2400
-            }
-        ],
+        "format": "CD",
+        "price": 765,
         "frontCover": "/images/albums/keane.jpg",
         "backCover": "/images/albums/keane.jpg",
         "description": "Norman Fucking Rockwell, lanzado el 30 de agosto de 2019, es el sexto álbum de estudio de la cantante estadounidense Lana Del Rey. Fue co-producido con Jack Antonoff y cuentacontribuciones adicionales de Zach Dawes, Andrew Watt y el antiguo colaborador de Lana, Rick Nowels. Musicalmente, Norman Fucking Rockwell se compone de jams de psic-rock, baladas de piano​ y presenta referencias a varios artistas de rock clásico.",
@@ -87,20 +63,8 @@
         "id": 3,
         "title": "Masseduction",
         "artist": "St. Vincent",
-        "formats": [
-            {
-                "CD": true,
-                "price": 744
-            },
-            {
-                "DVD": false,
-                "price": 0
-            },
-            {
-                "vinilo": true,
-                "price": 2400
-            }
-        ],
+        "format": "CD",
+        "price": 765,
         "frontCover": "/images/albums/masseduction.jpg",
         "backCover": "/images/albums/masseductionback.jpg",
         "description": "Norman Fucking Rockwell, lanzado el 30 de agosto de 2019, es el sexto álbum de estudio de la cantante estadounidense Lana Del Rey. Fue co-producido con Jack Antonoff y cuentacontribuciones adicionales de Zach Dawes, Andrew Watt y el antiguo colaborador de Lana, Rick Nowels. Musicalmente, Norman Fucking Rockwell se compone de jams de psic-rock, baladas de piano​ y presenta referencias a varios artistas de rock clásico.",
@@ -128,20 +92,8 @@
         "id": 4,
         "title": "Lover",
         "artist": "Taylor Swift",
-        "formats": [
-            {
-                "CD": true,
-                "price": 650
-            },
-            {
-                "DVD": false,
-                "price": 0
-            },
-            {
-                "vinilo": true,
-                "price": 2400
-            }
-        ],
+        "format": "CD",
+        "price": 765,
         "frontCover": "/images/albums/lover.jpg",
         "backCover": "/images/albums/lover.jpg",
         "description": "Norman Fucking Rockwell, lanzado el 30 de agosto de 2019, es el sexto álbum de estudio de la cantante estadounidense Lana Del Rey. Fue co-producido con Jack Antonoff y cuentacontribuciones adicionales de Zach Dawes, Andrew Watt y el antiguo colaborador de Lana, Rick Nowels. Musicalmente, Norman Fucking Rockwell se compone de jams de psic-rock, baladas de piano​ y presenta referencias a varios artistas de rock clásico.",
@@ -170,20 +122,8 @@
         "id": 5,
         "title": "Yo x Ti, Tu x Mi (Feat. Ozuna)",
         "artist": "Rosalía",
-        "formats": [
-            {
-                "CD": true,
-                "price": 650
-            },
-            {
-                "DVD": false,
-                "price": 0
-            },
-            {
-                "vinilo": true,
-                "price": 2400
-            }
-        ],
+        "format": "CD",
+        "price": 765,
         "frontCover": "/images/albums/rosalia.jpg",
         "backCover": "/images/albums/rosaliaback.jpg",
         "description": "Norman Fucking Rockwell, lanzado el 30 de agosto de 2019, es el sexto álbum de estudio de la cantante estadounidense Lana Del Rey. Fue co-producido con Jack Antonoff y cuentacontribuciones adicionales de Zach Dawes, Andrew Watt y el antiguo colaborador de Lana, Rick Nowels. Musicalmente, Norman Fucking Rockwell se compone de jams de psic-rock, baladas de piano​ y presenta referencias a varios artistas de rock clásico.",
@@ -199,20 +139,8 @@
         "id": 6,
         "title": "Everyday Life",
         "artist": "Coldplay",
-        "formats": [
-            {
-                "CD": true,
-                "price": 650
-            },
-            {
-                "DVD": false,
-                "price": 0
-            },
-            {
-                "vinilo": true,
-                "price": 2400
-            }
-        ],
+        "format": "CD",
+        "price": 765,
         "frontCover": "/images/albums/coldplay.jpg",
         "backCover": "/images/albums/coldplay.jpg",
         "description": "Norman Fucking Rockwell, lanzado el 30 de agosto de 2019, es el sexto álbum de estudio de la cantante estadounidense Lana Del Rey. Fue co-producido con Jack Antonoff y cuentacontribuciones adicionales de Zach Dawes, Andrew Watt y el antiguo colaborador de Lana, Rick Nowels. Musicalmente, Norman Fucking Rockwell se compone de jams de psic-rock, baladas de piano​ y presenta referencias a varios artistas de rock clásico.",
@@ -241,20 +169,8 @@
         "id": 7,
         "title": "Oasis",
         "artist": "J Balbin, Bad Bunny",
-        "formats": [
-            {
-                "CD": true,
-                "price": 650
-            },
-            {
-                "DVD": false,
-                "price": 0
-            },
-            {
-                "vinilo": true,
-                "price": 2400
-            }
-        ],
+        "format": "CD",
+        "price": 765,
         "frontCover": "/images/albums/oasis.jpg",
         "backCover": "/images/albums/oasis.jpg",
         "description": "Norman Fucking Rockwell, lanzado el 30 de agosto de 2019, es el sexto álbum de estudio de la cantante estadounidense Lana Del Rey. Fue co-producido con Jack Antonoff y cuentacontribuciones adicionales de Zach Dawes, Andrew Watt y el antiguo colaborador de Lana, Rick Nowels. Musicalmente, Norman Fucking Rockwell se compone de jams de psic-rock, baladas de piano​ y presenta referencias a varios artistas de rock clásico.",

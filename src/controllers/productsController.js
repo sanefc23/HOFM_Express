@@ -48,26 +48,15 @@ const productsController = {
             id: generateId(),
             title: req.body.title,
             artist: req.body.artist,
-            formats: [
-                {
-                    CD: cd,
-                    price: req.body.precioCD
-                },
-                {
-                    DVD: dvd,
-                    price: req.body.precioDVD
-                },
-                {
-                    vinilo: vinil,
-                    price: req.body.precioVinilo
-                }
-            ],
+            format: req.body.format,
+            price: req.body.price,
             frontCover: req.body.frontCover,
             backCover: req.body.backCover,
             description: req.body.description,
             rating: req.body.rating,
             tracklist: [tracklist],
             stock: req.body.stock,
+            sold: 0,
             released: req.body.released
         };
 
