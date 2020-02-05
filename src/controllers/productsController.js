@@ -95,6 +95,27 @@ const productsController = {
         });
     },
 
+    // TERMINAR ESTO
+
+    // renderEdit: (req, res) => {
+    //     let products = bringProducts();
+    //     res.render('productEdit', {
+    //         customCss: '/css/productAdd.css',
+    //         album: products.id(req.params.id)
+    //     });
+    // },
+
+    // edit: function (req, res) {
+    //     let products = bringProducts();
+    //     var finalProducts = products.filter(function (album) {
+    //         return album.id != req.params.id;
+    //     });
+    //     saveProducts(finalProducts);
+    //     res.redirect('/products/all');
+    // },
+
+    // HASTA ACA
+
     delete: function (req, res) {
         let products = bringProducts();
         var finalProducts = products.filter(function (album) {

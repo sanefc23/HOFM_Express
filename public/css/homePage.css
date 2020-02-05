@@ -26,6 +26,16 @@ body {
   margin-top: 1.4vh;
 }
 
+.wrapper {
+  display: inline-flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  padding: 0;
+  justify-content: flex-start;
+  align-items: center;
+  overflow-y: hidden;
+}
+
 .catalog {
   display: flex;
   flex-wrap: wrap;

@@ -12,6 +12,8 @@ router.post('/add', productsController.createProduct);
 router.get('/cart', productsController.renderCart);
 
 router.get('/all', productsController.showAll);
+// router.get('/all/edit/:id', productsController.renderEdit);
+// router.put('/all/edit/:id', productsController.edit);
 router.delete('/all/delete/:id', productsController.delete);
 router.get('/:id', productsController.renderDetail);
 
