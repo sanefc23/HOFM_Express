@@ -66,6 +66,12 @@ body {
     font-size: 1.5vh;
 }
 
+.text-box, option {
+    font-size: 2vh;
+    color: #484848;
+    font-family: 'Montserrat', sans-serif;
+}
+
 .add-track-text-box {
     width: 50vw;
 }

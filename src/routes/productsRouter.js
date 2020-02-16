@@ -14,7 +14,9 @@ var storage = multer.diskStorage({
     }
 });
 
-var upload = multer({ storage: storage });
+var upload = multer({
+    storage: storage
+});
 
 /* GET - Add products. */
 router.get('/add', productsController.renderAdd);

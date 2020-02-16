@@ -205,5 +205,39 @@
   "stock": "20",
   "sold": 0,
   "released": "2020-02-07"
+ },
+ {
+  "id": 9,
+  "title": "Thank U Next",
+  "artist": "Ariana Grande",
+  "format": "cd",
+  "price": "985",
+  "frontCover": "/images/albums/frontCover-1581814774738.jpg",
+  "backCover": "/images/albums/backCover-1581814774741.jpg",
+  "description": "God is a woman named Ariana Grande",
+  "rating": "5",
+  "tracklist": [
+   []
+  ],
+  "stock": "23",
+  "sold": 0,
+  "released": "2020-02-04"
+ },
+ {
+  "id": 10,
+  "title": "Rare",
+  "artist": "Selena Gomez",
+  "format": "cd",
+  "price": "586",
+  "frontCover": "/images/albums/frontCover-1581869840727.jpg",
+  "backCover": "/images/albums/backCover-1581869840731.jpg",
+  "description": "Can't keep my hands to myself",
+  "rating": "4",
+  "tracklist": [
+   []
+  ],
+  "stock": "45",
+  "sold": 0,
+  "released": "2020-02-05"
  }
 ]

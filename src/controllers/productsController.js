@@ -1,16 +1,15 @@
 const fs = require('fs');
-
+const db = require('../database/models/');
 const productsDir = 'data/products.json';
 
-// Connection to Database
-// let db = require('../database/models');
-// let sequelize = db.sequelize;
+const Albums = db.albums;
+const Artists = db.artists;
 
-function bringProducts() {
-    let readProducts = fs.readFileSync(productsDir, 'utf-8');
-    let products = readProducts.length == 0 ? [] : JSON.parse(readProducts);
-    return products;
-}
+// function bringProducts() {
+//     let readProducts = fs.readFileSync(productsDir, 'utf-8');
+//     let products = readProducts.length == 0 ? [] : JSON.parse(readProducts);
+//     return products;
+// }
 
 function saveProducts(products) {
     fs.writeFileSync(productsDir, JSON.stringify(products, null, ' '));
@@ -30,10 +29,15 @@ let tracklist = [];
 
 const productsController = {
     renderAdd: (req, res) => {
-        res.render('productAdd', {
-            customCss: '/css/productAdd.css',
-            tracklist: tracklist,
-        });
+        Artists
+            .findAll({
+                order: [['name', 'ASC']],
+            })
+            .then(artists => res.render('productAdd', {
+                customCss: '/css/productAdd.css',
+                artists: artists,
+                tracklist: tracklist,
+            })).catch(error => res.send(error));
     },
 
     createProduct: (req, res, next) => {
@@ -91,12 +95,16 @@ const productsController = {
     // permite eliminar productos.
 
     showAll: (req, res) => {
-        let products = bringProducts();
-        res.render('allProducts', {
-            customCss: '/css/homePage.css',
-            allProducts: products
-        });
+        Albums
+            .findAll()
+            .then(allAlbums => {
+                res.render('allProducts', {
+                    customCss: '/css/homePage.css',
+                    allProducts: allAlbums
+                });
+            }).catch(error => res.send(error));
     },
+
 
     // TERMINAR ESTO
 

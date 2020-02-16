@@ -18,7 +18,11 @@
             <div class="input-info-card">
                 <div class="input-frame">
                     <label class="input-hint">Artista</label>
-                    <input class="text-box" type="text" name="artist">
+                    <select class="text-box" name="artists_id">
+                        <% artists.forEach(artist => { %>
+                        <option value="<%= artist.id %>"><%= artist.name %></option>
+                        <% }) %>
+                    </select>
                     <label class="input-hint">Album</label>
                     <input class="text-box" type="text" name="title">
                     <label class="input-hint">Descripción</label>
