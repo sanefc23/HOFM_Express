@@ -239,5 +239,21 @@
   "stock": "45",
   "sold": 0,
   "released": "2020-02-05"
+ },
+ {
+  "id": 11,
+  "title": "Halcyon Days",
+  "format": "cd",
+  "price": "562",
+  "frontCover": "/images/albums/frontCover-1581886062526.jpg",
+  "backCover": "/images/albums/backCover-1581886062528.jpg",
+  "description": "Some description",
+  "rating": "5",
+  "tracklist": [
+   []
+  ],
+  "stock": "12",
+  "sold": 0,
+  "released": "2020-02-01"
  }
 ]

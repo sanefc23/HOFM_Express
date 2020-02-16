@@ -86,7 +86,7 @@ body {
 }
 
 .price-box, .info-box {
-    width: 48%;
+    width: 30%;
     height: 4.5vh;
     border: none;
     font-family: 'Montserrat', sans-serif;
@@ -98,11 +98,8 @@ body {
 }
 
 .info-box {
-    width: 30%
-}
-
-.price-box::placeholder {
-    font-size: 2vh;
+    padding-left: 1vw;
+    
 }
 
 #add-track {

@@ -4,12 +4,13 @@ const productsDir = 'data/products.json';
 
 const Albums = db.albums;
 const Artists = db.artists;
+const Genres = db.genres;
 
-// function bringProducts() {
-//     let readProducts = fs.readFileSync(productsDir, 'utf-8');
-//     let products = readProducts.length == 0 ? [] : JSON.parse(readProducts);
-//     return products;
-// }
+function bringProducts() {
+    let readProducts = fs.readFileSync(productsDir, 'utf-8');
+    let products = readProducts.length == 0 ? [] : JSON.parse(readProducts);
+    return products;
+}
 
 function saveProducts(products) {
     fs.writeFileSync(productsDir, JSON.stringify(products, null, ' '));
@@ -29,15 +30,16 @@ let tracklist = [];
 
 const productsController = {
     renderAdd: (req, res) => {
-        Artists
-            .findAll({
-                order: [['name', 'ASC']],
-            })
+        Artists.findAll({
+            order: [['name', 'ASC']],
+        })
             .then(artists => res.render('productAdd', {
                 customCss: '/css/productAdd.css',
                 artists: artists,
+                // genres: genres,
                 tracklist: tracklist,
-            })).catch(error => res.send(error));
+            }))
+            .catch(error => res.send(error))
     },
 
     createProduct: (req, res, next) => {

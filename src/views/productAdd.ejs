@@ -19,6 +19,7 @@
                 <div class="input-frame">
                     <label class="input-hint">Artista</label>
                     <select class="text-box" name="artists_id">
+                        <option value="">Seleccioná un artista</option>
                         <% artists.forEach(artist => { %>
                         <option value="<%= artist.id %>"><%= artist.name %></option>
                         <% }) %>
@@ -27,16 +28,24 @@
                     <input class="text-box" type="text" name="title">
                     <label class="input-hint">Descripción</label>
                     <textarea class="textarea-box" type="text" name="description"></textarea>
-                    <label class="input-hint">Formatos y Precios</label>
+                    <label class="input-hint">Información Adicional</label>
                     <div class="formats">
-                        <select class="price-box" name="format" id="format">
+                        <select class="info-box" name="format" id="format">
+                            <option value="">Formato</option>
                             <option value="cd">CD</option>
                             <option value="dvd">DVD</option>
                             <option value="vinilo">Vinilo</option>
                         </select>
-                        <input class="price-box" type="number" name="price" placeholder="$">
+                        <input class="price-box" type="number" name="price" placeholder="Precio">
+                        <!-- <input class="price-box" type="text" name="price" placeholder="$"> -->
+                        <select class="info-box" name="genre_id">
+                            <option value="">Género</option>
+                            <% artists.forEach(artist => { %>
+                            <option value="<%= artist.id %>"><%= artist.name %></option>
+                            <% }) %>
+                        </select>
                     </div>
-                    <label class="input-hint">Información Adicional</label>
+                    <br>
                     <div class="formats">
                         <input class="info-box" type="number" name="rating" placeholder="Valoración">
                         <input class="info-box" type="number" name="stock" placeholder="Stock">
