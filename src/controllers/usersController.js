@@ -103,7 +103,6 @@ const usersController = {
 
     check: (req, res) => {
         console.log(req.session.loggedUser);
-
         if (req.session.loggedUser == undefined) {
             return res.send("No estás loggeado");
         } else {

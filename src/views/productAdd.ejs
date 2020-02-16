@@ -1,18 +1,18 @@
 <%- include('partials/head.ejs') %>
 <div class="background">
     <%- include('partials/nav-bar.ejs') %>
-    <form action="/products/add" method="POST">
+    <form action="/products/add" method="POST" enctype="multipart/form-data">
         <div class="frame">
             <div class="input-cover-frame">
                 <div class="input-frontcover-card">
                     <img id="add-album-icon" src="/images/add-album-cover.png" alt="">
                     <label class="input-hint">Front Cover</label>
-                    <!-- <input type="file" name="frontCover"> -->
+                    <input type="file" name="frontCover">
                 </div>
                 <div class="input-backcover-card">
                     <img id="add-album-icon" src="/images/add-album-cover.png" alt="">
                     <label class="input-hint">Back Cover</label>
-                    <!-- <input type="file" name="backCover"> -->
+                    <input type="file" name="backCover">
                 </div>
             </div>
             <div class="input-info-card">

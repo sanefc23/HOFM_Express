@@ -36,7 +36,7 @@ const productsController = {
         });
     },
 
-    createProduct: (req, res) => {
+    createProduct: (req, res, next) => {
 
         let track = req.body.track;
 
@@ -44,14 +44,17 @@ const productsController = {
         let dvd = req.body.precioDVD != null ? true : false;
         let vinil = req.body.precioVinilo != null ? true : false;
 
+        console.log(req);
+
+
         let album = {
             id: generateId(),
             title: req.body.title,
             artist: req.body.artist,
             format: req.body.format,
             price: req.body.price,
-            frontCover: req.body.frontCover,
-            backCover: req.body.backCover,
+            frontCover: `/images/albums/${req.files[0].filename}`,
+            backCover: `/images/albums/${req.files[1].filename}`,
             description: req.body.description,
             rating: req.body.rating,
             tracklist: [tracklist],
@@ -63,7 +66,7 @@ const productsController = {
         let products = bringProducts();
         products.push(album);
         saveProducts(products);
-        res.send("Album agregado!");
+        res.redirect('/products/all');
     },
 
     renderCart: (req, res) => {
