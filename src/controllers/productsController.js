@@ -27,7 +27,7 @@ const productsController = {
             });
     },
 
-    createProduct: (req, res, next) => {
+    store: (req, res, next) => {
 
         console.log(req.body);
 
@@ -53,9 +53,7 @@ const productsController = {
             }).catch(error => res.send(error));
     },
 
-    // /products/all debe ser una ruta
-    // solo accesible por el administrador
-    // permite eliminar productos.
+    // /products/all debe ser una ruta solo accesible por el administrador
 
     showAll: (req, res) => {
 
