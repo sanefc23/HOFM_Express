@@ -1,78 +1,39 @@
 const fs = require('fs');
 const db = require('../database/models/');
-const productsDir = 'data/products.json';
 
 const Albums = db.albums;
 const Artists = db.artists;
 const Genres = db.genres;
 
-function bringProducts() {
-    let readProducts = fs.readFileSync(productsDir, 'utf-8');
-    let products = readProducts.length == 0 ? [] : JSON.parse(readProducts);
-    return products;
-}
-
-function saveProducts(products) {
-    fs.writeFileSync(productsDir, JSON.stringify(products, null, ' '));
-}
-
-function generateId() {
-    let products = bringProducts();
-    if (products.length == 0) {
-        return 1;
-    } else {
-        let lastProduct = products[products.length - 1];
-        return lastProduct.id + 1;
-    }
-};
-
-let tracklist = [];
-
 const productsController = {
     renderAdd: (req, res) => {
-        Artists.findAll({
+
+        let artists = Artists.findAll({
             order: [['name', 'ASC']],
-        })
-            .then(artists => res.render('productAdd', {
-                customCss: '/css/productAdd.css',
-                artists: artists,
-                // genres: genres,
-                tracklist: tracklist,
-            }))
-            .catch(error => res.send(error))
+        });
+        let genres = Genres.findAll({
+            order: [['name', 'ASC']],
+        });
+
+        Promise
+            .all([artists, genres])
+            .then(results => {
+                res.render('productAdd', {
+                    customCss: '/css/productAdd.css',
+                    artists: results[0],
+                    genres: results[1],
+                    // tracklist: tracklist,
+                }).catch(error => res.send(error))
+            });
     },
 
     createProduct: (req, res, next) => {
 
-        let track = req.body.track;
+        console.log(req.body);
 
-        let cd = req.body.precioCD != null ? true : false;
-        let dvd = req.body.precioDVD != null ? true : false;
-        let vinil = req.body.precioVinilo != null ? true : false;
-
-        console.log(req);
-
-
-        let album = {
-            id: generateId(),
-            title: req.body.title,
-            artist: req.body.artist,
-            format: req.body.format,
-            price: req.body.price,
-            frontCover: `/images/albums/${req.files[0].filename}`,
-            backCover: `/images/albums/${req.files[1].filename}`,
-            description: req.body.description,
-            rating: req.body.rating,
-            tracklist: [tracklist],
-            stock: req.body.stock,
-            sold: 0,
-            released: req.body.released
-        };
-
-        let products = bringProducts();
-        products.push(album);
-        saveProducts(products);
-        res.redirect('/products/all');
+        Albums
+            .create(req.body)
+            .then(product => res.redirect('/products/all'));
     },
 
     renderCart: (req, res) => {
@@ -82,14 +43,14 @@ const productsController = {
     },
 
     renderDetail: (req, res) => {
-        let products = bringProducts();
-
-        let selectedProduct = products.filter(album => album.id == req.params.id ? album : null);
-
-        res.render('productDetail', {
-            customCss: '/css/prodDetail.css',
-            album: selectedProduct[0]
-        });
+        Albums
+            .findByPk(req.params.id)
+            .then(album => {
+                return res.render('productDetail', {
+                    customCss: '/css/prodDetail.css',
+                    album: album
+                });
+            }).catch(error => res.send(error));
     },
 
     // /products/all debe ser una ruta
@@ -97,6 +58,7 @@ const productsController = {
     // permite eliminar productos.
 
     showAll: (req, res) => {
+
         Albums
             .findAll()
             .then(allAlbums => {

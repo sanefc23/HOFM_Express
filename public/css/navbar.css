@@ -28,7 +28,7 @@ header::after {
     top: 100%;
     left: 0;
     position: absolute;
-    background: rgb(27, 27, 27);
+    /* background: rgb(27, 27, 27); */
     clip-path: circle(0px at top left);
     transition: clip-path ease-in-out 500ms;
 }
