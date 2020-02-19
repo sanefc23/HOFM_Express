@@ -4,7 +4,7 @@
         <a href="/products/<%=novedades[i].id%>">
             <img id="album-cover" src="<%= novedades[i].front_cover %>" alt="" />
         </a>
-        <h5 id="artist"><%= novedades[i].artists_id %></h5>
+        <h5 id="artist"><%= novedades[i].artist.name %></h5>
         <h5 id="album"><%= novedades[i].title %></h5>
     </section>
     <% } %>

@@ -8,7 +8,9 @@ const mainController = {
 
 	root: (req, res) => {
 		Albums
-			.findAll()
+			.findAll({
+				include: ['artist']
+			})
 			.then(albums => {
 				res.render('homePage', {
 					customCss: '/css/homePage.css',

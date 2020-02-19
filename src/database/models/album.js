@@ -25,5 +25,30 @@ module.exports = (sequelize, DataTypes) => {
 
     const album = sequelize.define(alias, columns, config);
 
+    album.associate = (models) => {
+        // belongsTo 
+        album.belongsTo(models.artists, {
+            as: 'artist',
+            foreignKey: 'artists_id'
+        });
+        album.belongsTo(models.genres, {
+            as: 'genre',
+            foreignKey: 'genre_id'
+        });
+    }
+
+    //     // belongsToMany
+    //     album.belongsToMany(models.categories, {
+    //         as: 'categories',
+    //         through: 'category_product',
+    //         foreignKey: 'productId',
+    //         otherKey: 'categoryId',
+    //     });
+    // }
+
+    // product.prototype.getRoundPrice = function () {
+    //     return Number(this.price).toFixed();
+    // }
+
     return album;
 }

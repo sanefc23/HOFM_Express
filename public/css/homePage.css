@@ -68,18 +68,33 @@ body {
   font-weight: bold;
 }
 
-#delete {
-  background-color: rgba(230, 100, 100, 0.85);
+#update {
+  background-color: rgba(247, 170, 3, 0.85);
   color: white;
-  height: 5vh;
+  height: 4vh;
   width: 15vw;
   border: none;
   border-radius: 2px;
-  margin-bottom: 1.5em;
+  margin-top: 0.2em;
+  margin-bottom: .2em;
+}
+
+#update:hover {
+  background-color: rgb(253, 213, 127);
+}
+
+#delete {
+  background-color: rgba(230, 100, 100, 0.85);
+  color: white;
+  height: 4vh;
+  width: 15vw;
+  border: none;
+  border-radius: 2px;
+  margin-bottom: 2em;
 }
 
 #delete:hover {
-  background-color: rgb(230, 100, 100);
+  background-color: rgb(221, 140, 140);
 }
 
 .footer {

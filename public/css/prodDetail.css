@@ -17,6 +17,10 @@ body {
     width: 100%;
 }
 
+h5 {
+    font-weight: lighter;
+}
+
 .tracklist {
     padding-top: 3em;
     padding-left: 2em;

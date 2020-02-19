@@ -30,14 +30,15 @@ const productsController = {
     store: (req, res, next) => {
         Albums
             .create({
+                ...req.body,
                 front_cover: `/images/albums/${req.files[0].filename}`,
                 back_cover: `/images/albums/${req.files[1].filename}`,
-                artists_id: req.body.artists_id,
-                title: req.body.title,
-                description: req.body.description,
-                genre_id: req.body.genre_id,
-                rating: req.body.rating,
-                release_date: req.body.release_date
+                // artists_id: req.body.artists_id,
+                // title: req.body.title,
+                // description: req.body.description,
+                // genre_id: req.body.genre_id,
+                // rating: req.body.rating,
+                // release_date: req.body.release_date
             })
             .then(product => res.redirect('/products/all')).catch(error => res.send(error));
     },
@@ -50,7 +51,9 @@ const productsController = {
 
     renderDetail: (req, res) => {
         Albums
-            .findByPk(req.params.id)
+            .findByPk(req.params.id, {
+                include: ['artist', 'genre']
+            })
             .then(album => {
                 return res.render('productDetail', {
                     customCss: '/css/prodDetail.css',
@@ -63,7 +66,9 @@ const productsController = {
 
     showAll: (req, res) => {
         Albums
-            .findAll()
+            .findAll({
+                include: ['artist']
+            })
             .then(allAlbums => {
                 res.render('allProducts', {
                     customCss: '/css/homePage.css',

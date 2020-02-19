@@ -16,7 +16,15 @@ module.exports = (sequelize, DataTypes) => {
         timestamps: false,
     };
 
-    const artists = sequelize.define(alias, columns, config);
+    const artist = sequelize.define(alias, columns, config);
 
-    return artists;
+    artist.associate = (models) => {
+        // hasMany
+        artist.hasMany(models.albums, {
+            as: 'albums',
+            foreignKey: 'artists_id'
+        })
+    }
+
+    return artist;
 }
