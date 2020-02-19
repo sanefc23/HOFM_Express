@@ -78,6 +78,7 @@ body {
 
 .textarea-box {
     height: 12vh;
+    padding: .5em;
 }
 
 .formats {
@@ -99,7 +100,6 @@ body {
 
 .info-box {
     padding-left: 1vw;
-    
 }
 
 #add-track {
@@ -131,6 +131,23 @@ body {
     border: none;
 }
 
+#update-btn {
+    background-color: rgba(247, 170, 3, 0.85);
+    border: none;
+    height: 50px;
+    width: 75%;
+    border-radius: 25px;
+    margin: 0 auto;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#update-btn:hover {
+    background-color: rgb(253, 213, 127);
+}
+
 @media(min-width: 700px) {
     .frame {
         display: flex;
@@ -157,7 +174,7 @@ body {
     .add-track-text-box {
         width: 16vw;
     }
-    #add-btn {
+    #add-btn, #update-btn {
         width: 30%;
     }
 }

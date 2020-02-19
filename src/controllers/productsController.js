@@ -33,12 +33,6 @@ const productsController = {
                 ...req.body,
                 front_cover: `/images/albums/${req.files[0].filename}`,
                 back_cover: `/images/albums/${req.files[1].filename}`,
-                // artists_id: req.body.artists_id,
-                // title: req.body.title,
-                // description: req.body.description,
-                // genre_id: req.body.genre_id,
-                // rating: req.body.rating,
-                // release_date: req.body.release_date
             })
             .then(product => res.redirect('/products/all')).catch(error => res.send(error));
     },
@@ -77,27 +71,47 @@ const productsController = {
             }).catch(error => res.send(error));
     },
 
+    renderEdit: (req, res) => {
 
-    // TERMINAR ESTO
+        let artists = Artists.findAll({
+            order: [['name', 'ASC']],
+        });
+        let genres = Genres.findAll({
+            order: [['name', 'ASC']],
+        });
 
-    // renderEdit: (req, res) => {
-    //     let products = bringProducts();
-    //     res.render('productEdit', {
-    //         customCss: '/css/productAdd.css',
-    //         album: products.id(req.params.id)
-    //     });
-    // },
+        Promise
+            .all([artists, genres])
+            .then(results => {
+                Albums
+                    .findByPk(req.params.id, {
+                        include: ['artist', 'genre']
+                    })
+                    .then(album => {
+                        res.render('productEdit', {
+                            customCss: '/css/productAdd.css',
+                            album: album,
+                            artists: results[0],
+                            genres: results[1],
+                            // tracklist: tracklist,
+                        });
+                    })
+            }).catch(error => res.send(error));
+    },
 
-    // edit: function (req, res) {
-    //     let products = bringProducts();
-    //     var finalProducts = products.filter(function (album) {
-    //         return album.id != req.params.id;
-    //     });
-    //     saveProducts(finalProducts);
-    //     res.redirect('/products/all');
-    // },
-
-    // HASTA ACA
+    update: function (req, res) {
+        Albums
+            .update({
+                ...req.body,
+                front_cover: `/images/albums/${req.files[0].filename}`,
+                back_cover: `/images/albums/${req.files[1].filename}`,
+            }, {
+                where: {
+                    id: req.params.id
+                }
+            })
+            .then(product => res.redirect(`/products/${req.params.id}`)).catch(error => res.send(error));
+    },
 
     destroy: (req, res) => {
         Albums

@@ -20,23 +20,28 @@ var upload = multer({
     storage: storage
 });
 
-// Show create-form
+// Show create-form - GET
 router.get('/add', productsController.renderAdd);
 
-// Store product
+// Store product - POST
 router.post('/add', upload.any('file'), productsController.store);
+
+// Show cart - GET
 router.get('/cart', productsController.renderCart);
 
-// Show complete catalog
+// Show complete catalog - GET
 router.get('/all', productsController.showAll);
 
-// router.get('/all/edit/:id', productsController.renderEdit);
-// router.put('/all/edit/:id', productsController.edit);
+// Show edit-form - GET
+router.get('/all/edit/:id', productsController.renderEdit);
 
-// Delete product
+// Update product - PUT
+router.put('/all/edit/:id', productsController.update);
+
+// Delete product - DELETE
 router.delete('/all/delete/:id', productsController.destroy);
 
-// Show product detail
+// Show product detail - GET
 router.get('/:id', productsController.renderDetail);
 
 

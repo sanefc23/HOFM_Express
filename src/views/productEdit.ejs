@@ -1,72 +1,79 @@
 <%- include('partials/head.ejs') %>
 <div class="background">
     <%- include('partials/nav-bar.ejs') %>
-    <form action="/products/add" method="POST">
+    <form action="/products/edit/<%=album.id%>?_method=PUT" method="PUT" enctype="multipart/form-data">
         <div class="frame">
             <div class="input-cover-frame">
                 <div class="input-frontcover-card">
                     <img id="add-album-icon" src="/images/add-album-cover.png" alt="">
                     <label class="input-hint">Front Cover</label>
-                    <!-- <input type="file" name="frontCover"> -->
+                    <input type="file" name="front_cover">
                 </div>
                 <div class="input-backcover-card">
                     <img id="add-album-icon" src="/images/add-album-cover.png" alt="">
                     <label class="input-hint">Back Cover</label>
-                    <!-- <input type="file" name="backCover"> -->
+                    <input type="file" name="back_cover">
                 </div>
             </div>
             <div class="input-info-card">
                 <div class="input-frame">
                     <label class="input-hint">Artista</label>
-                    <input class="text-box" type="text" name="artist" value="<%= ">
+                    <select class="text-box" name="artists_id">
+                        <option value="<%= album.artist.id %>"><%= album.artist.name %></option>
+                        <% artists.forEach(artist => { %>
+                        <option value="<%= artist.id %>"><%= artist.name %></option>
+                        <% }) %>
+                    </select>
                     <label class="input-hint">Album</label>
-                    <input class="text-box" type="text" name="title">
+                    <input class="text-box" value="<%= album.title %>" type="text" name="title">
                     <label class="input-hint">Descripción</label>
-                    <textarea class="textarea-box" type="text" name="description"></textarea>
-                    <label class="input-hint">Formatos y Precios</label>
+                    <textarea class="textarea-box" placeholder="<%= album.description %>" type="text"
+                        name="description"></textarea>
+                    <label class="input-hint">Información Adicional</label>
                     <div class="formats">
-                        <select class="price-box" name="format" id="format">
+                        <select class="info-box" name="" id="format">
+                            <option value="">Formato</option>
                             <option value="cd">CD</option>
                             <option value="dvd">DVD</option>
                             <option value="vinilo">Vinilo</option>
                         </select>
-                        <input class="price-box" type="number" name="price" placeholder="$">
+                        <input class="price-box" type="number" name="" placeholder="Precio">
+                        <select class="info-box" name="genre_id">
+                            <option value="<%= album.genre.id %>"><%= album.genre.name %></option>
+                            <% genres.forEach(genre => { %>
+                            <option value="<%= genre.id %>"><%= genre.name %></option>
+                            <% }) %>
+                        </select>
                     </div>
-                    <label class="input-hint">Información Adicional</label>
+                    <br>
                     <div class="formats">
-                        <input class="info-box" type="number" name="rating" placeholder="Valoración">
-                        <input class="info-box" type="number" name="stock" placeholder="Stock">
-                        <input class="info-box" type="date" name="released" placeholder="">
+                        <input class="info-box" type="number" name="rating" value="<%= album.rating %>">
+                        <input class="info-box" type="number" name="" placeholder="Stock">
+                        <input class="info-box" type="date" name="release_date" value="<%= album.release_date %>">
                     </div>
                 </div>
             </div>
-            <div class="input-tracklist-card">
+            <div class=" input-tracklist-card">
                 <div class="tracklist-frame">
                     <div class="tracklist">
                         <ul style="list-style: none;">
-                            <% for (let i = 0; i < tracklist.length; i++) { %>
-                            <li class="track"><%= tracklist[i] %></li>
-                            <% } %>
+
                         </ul>
                     </div>
                 </div>
                 <div class="input-tracklist-frame">
                     <label class="input-hint">Ingrese track:</label>
                     <div class="formats">
-                        <input id="newTrack" class="add-track-text-box" type="text" name="track">
+                        <input id="newTrack" class="add-track-text-box" type="text" name="">
                         <button id="add-track" onclick="pushToTracklist">+</button>
                     </div>
                 </div>
             </div>
         </div>
-        <button id="add-btn" type="submit" onclick="pushAlbumToJSON">Agregar album</button>
+        <button id="update-btn" type="submit">Actualizar album</button>
     </form>
     <%- include('partials/footer.ejs') %>
 </div>
-
-<script>
-
-</script>
 
 </body>
 
