@@ -80,6 +80,11 @@ body {
     border: none;
 }
 
+.footer {
+    position: relative;
+    margin-top: 4vh;
+}
+
 @media(min-width: 700px) {
     .frame {
         display: flex;

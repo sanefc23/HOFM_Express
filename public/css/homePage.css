@@ -5,44 +5,47 @@ body {
   color: white;
 }
 
-.frame {
-  padding: 0em 2em;
-}
+/* .frame {
+  padding: 0em 1.5em;
+} */
 
 #title {
   font-size: 2.5vw;
+  padding: 0.2em 0em 0em 0.5em;
   font-weight: normal;
 }
 
 #catalog-title {
   font-size: 2vw;
   font-weight: normal;
-  margin-left: 0.3vw;
+  margin-left: 1.2vw;
   margin-top: 1.4vh;
 }
 
 .wrapper {
   display: inline-flex;
-  flex-wrap: wrap;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 200%;
+  flex-wrap: nowrap;
+  box-sizing: border-box;
   margin: 0 auto;
-  padding: 0;
+  padding: 0.8em 1.5em;
   justify-content: flex-start;
   align-items: center;
-  overflow-y: hidden;
+  overflow-y: auto;
 }
 
 .catalog {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 auto;
+  margin: 1.2em;
   padding: 0;
   justify-content: flex-start;
   align-items: center;
 }
 
 .product {
-  margin-right: 0.7em;
-  margin-bottom: 1.8em;
+  margin-right: 1em;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -55,6 +58,10 @@ body {
 #artist, #album {
   font-size: 2vh;
   margin: 2px;
+  width: 14vw;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 #artist {
@@ -68,6 +75,7 @@ body {
   width: 15vw;
   border: none;
   border-radius: 2px;
+  margin-bottom: 1.5em;
 }
 
 #delete:hover {
