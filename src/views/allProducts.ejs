@@ -12,9 +12,7 @@
                 </a>
                 <h5 id="artist"><%= allProducts[i].artist.name %></h5>
                 <h5 id="album"><%= allProducts[i].title %></h5>
-                <form action="/products/all/edit/<%= allProducts[i].id %>?_method=PUT" method="POST">
-                    <button id="update">Editar</button>
-                </form>
+                <a href=/products/all/edit/<%= allProducts[i].id %>><button id="update">Editar</button></a>
                 <form action="/products/all/delete/<%= allProducts[i].id %>?_method=DELETE" method="POST">
                     <button id="delete">Eliminar</button>
                 </form>

@@ -1,7 +1,7 @@
 <%- include('partials/head.ejs') %>
 <div class="background">
     <%- include('partials/nav-bar.ejs') %>
-    <form action="/products/edit/<%=album.id%>?_method=PUT" method="PUT" enctype="multipart/form-data">
+    <form action="/products/all/edit/<%=album.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
         <div class="frame">
             <div class="input-cover-frame">
                 <div class="input-frontcover-card">

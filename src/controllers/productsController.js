@@ -72,7 +72,6 @@ const productsController = {
     },
 
     renderEdit: (req, res) => {
-
         let artists = Artists.findAll({
             order: [['name', 'ASC']],
         });
@@ -110,7 +109,9 @@ const productsController = {
                     id: req.params.id
                 }
             })
-            .then(product => res.redirect(`/products/${req.params.id}`)).catch(error => res.send(error));
+            .then(product =>
+                res.redirect(`/products/${req.params.id}`)
+            ).catch(error => res.send(error));
     },
 
     destroy: (req, res) => {
