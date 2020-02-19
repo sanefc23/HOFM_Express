@@ -2,14 +2,10 @@
 const express = require('express');
 const router = express.Router();
 const usersController = require('../controllers/usersController');
-const fs = require('fs');
 const { check, body } = require('express-validator');
+const db = require('../database/models/');
 
-
-const usersDir = 'data/users.json';
-
-let readUsers = fs.readFileSync(usersDir, 'utf-8');
-let users = readUsers.length == 0 ? [] : JSON.parse(readUsers);
+const Users = db.users;
 
 let registerValidations = [
     check('name').isLength({
@@ -23,11 +19,11 @@ let registerValidations = [
     }).withMessage('Necesitamos tu domicilio para poder enviar tus compras.'),
     check('email').isEmail().withMessage('No es una casilla de correo válida.'),
     body('email').custom(value => {
-        for (let i = 0; i < users.length; i++) {
-            if (users[i].email == value) {
-                return false;
-            };
-        };
+        Users.findAll({
+            where: {
+                email: value
+            }
+        })
         return true;
     }).withMessage('El email ingresado ya se encuentra registrado.'),
     check('password').isLength({
