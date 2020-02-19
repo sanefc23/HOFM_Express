@@ -36,7 +36,7 @@ router.get('/all', productsController.showAll);
 router.get('/all/edit/:id', productsController.renderEdit);
 
 // Update product - PUT
-router.put('/all/edit/:id', productsController.update);
+router.put('/all/edit/:id', upload.any('file'), productsController.update);
 
 // Delete product - DELETE
 router.delete('/all/delete/:id', productsController.destroy);
