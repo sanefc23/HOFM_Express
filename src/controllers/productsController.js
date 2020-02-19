@@ -28,12 +28,18 @@ const productsController = {
     },
 
     store: (req, res, next) => {
-
-        console.log(req.body);
-
         Albums
-            .create(req.body)
-            .then(product => res.redirect('/products/all'));
+            .create({
+                front_cover: `/images/albums/${req.files[0].filename}`,
+                back_cover: `/images/albums/${req.files[1].filename}`,
+                artists_id: req.body.artists_id,
+                title: req.body.title,
+                description: req.body.description,
+                genre_id: req.body.genre_id,
+                rating: req.body.rating,
+                release_date: req.body.release_date
+            })
+            .then(product => res.redirect('/products/all')).catch(error => res.send(error));
     },
 
     renderCart: (req, res) => {
@@ -56,7 +62,6 @@ const productsController = {
     // /products/all debe ser una ruta solo accesible por el administrador
 
     showAll: (req, res) => {
-
         Albums
             .findAll()
             .then(allAlbums => {
@@ -89,13 +94,14 @@ const productsController = {
 
     // HASTA ACA
 
-    delete: function (req, res) {
-        let products = bringProducts();
-        var finalProducts = products.filter(function (album) {
-            return album.id != req.params.id;
-        });
-        saveProducts(finalProducts);
-        res.redirect('/products/all');
+    destroy: (req, res) => {
+        Albums
+            .findByPk(req.params.id)
+            .then(product => {
+                product.destroy();
+                return res.redirect('/products/all');
+            })
+            .catch(error => res.send(error));
     }
 };
 

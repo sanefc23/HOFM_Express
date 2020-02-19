@@ -3,7 +3,7 @@ const router = express.Router();
 const multer = require('multer');
 let path = require('path');
 
-/*====== Controller ======*/ 
+/*====== Controller ======*/
 const productsController = require('../controllers/productsController');
 
 // Multer implementation
@@ -24,7 +24,7 @@ var upload = multer({
 router.get('/add', productsController.renderAdd);
 
 // Store product
-router.post('/add', upload.any(), productsController.store);
+router.post('/add', upload.any('file'), productsController.store);
 router.get('/cart', productsController.renderCart);
 
 // Show complete catalog
@@ -34,7 +34,7 @@ router.get('/all', productsController.showAll);
 // router.put('/all/edit/:id', productsController.edit);
 
 // Delete product
-router.delete('/all/delete/:id', productsController.delete);
+router.delete('/all/delete/:id', productsController.destroy);
 
 // Show product detail
 router.get('/:id', productsController.renderDetail);
