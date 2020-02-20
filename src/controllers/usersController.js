@@ -20,7 +20,6 @@ const usersController = {
                 registerErrors: errors.errors
             });
         } else {
-
             let encrytedPassword = bcrypt.hashSync(req.body.password, 10);
 
             if (req.body.password == req.body.verification) {
@@ -46,38 +45,43 @@ const usersController = {
     },
 
     processLogin: (req, res) => {
-        // /* Valida email y contraseña encriptada */
+        /* Valida email y contraseña encriptada */
 
-        // let errors = validationResult(req);
+        let errors = validationResult(req);
 
-        // if (errors.isEmpty()) {
-        //     let userToLog;
-        //     for (let i = 0; i < users.length; i++) {
-        //         if (users[i].email == req.body.email && bcrypt.compareSync(req.body.password, users[i].password)) {
-        //             userToLog = users[i];
-        //             break;
-        //         }
-        //     }
-        //     if (userToLog == undefined) {
-        //         return res.render('loginPage', {
-        //             customCss: '/css/loginPage.css',
-        //             registerErrors: [{ msg: 'Alguno de los datos que ingresaste no es correcto.' }]
-        //         });
-        //     };
+        if (errors.isEmpty()) {
 
-        //     req.session.loggedUser = userToLog;
+            Users.findAll({
+                where: {
+                    email: req.body.email,
+                }
+            }).then(userToLog => {
 
-        //     if (req.body.rememberMe != undefined) {
-        //         res.cookie('rememberMe', userToLog.email, { maxAge: 60000 });
-        //     }
+                userToLog = userToLog[0];
 
-        //     res.send(`Bienvenidx ${req.session.loggedUser.email}`);
-        // } else {
-        //     return res.render('loginPage', {
-        //         customCss: '/css/loginPage.css',
-        //         registerErrors: errors.errors
-        //     });
-        // };
+                if (userToLog == undefined) {
+                    return res.render('loginPage', {
+                        customCss: '/css/loginPage.css',
+                        registerErrors: [{ msg: 'Alguno de los datos que ingresaste no es correcto.' }]
+                    });
+                } else {
+                    if (bcrypt.compareSync(req.body.password, userToLog.password)) {
+
+                        req.session.loggedUser = userToLog;
+                        if (req.body.rememberMe != undefined) {
+                            res.cookie('rememberMe', userToLog.email, { maxAge: 60000 });
+                        }
+                        return res.send(`Bienvenidx ${req.session.loggedUser.email}`);
+                    } else {
+                        return res.render('loginPage', {
+                            customCss: '/css/loginPage.css',
+                            registerErrors: [{ msg: 'error con la contraseña.' }]
+                        });
+                    }
+                }
+            }
+            ).catch(error => res.send(error));
+        }
     },
 
     check: (req, res) => {
