@@ -1,23 +1,33 @@
 const db = require('../database/models/');
 
 const Albums = db.albums;
-const Artists = db.artists;
 const Genres = db.genres;
 
 const mainController = {
 
 	root: (req, res) => {
-		Albums
-			.findAll({
-				include: ['artist']
-			})
-			.then(albums => {
+		let albums = Albums.findAll({
+			include: ['artist']
+		});
+		let genres = Genres.findAll({
+			order: [['name', 'ASC']],
+		});
+
+		Promise
+			.all([albums, genres])
+			.then(results => {
 				res.render('homePage', {
 					customCss: '/css/homePage.css',
-					novedades: albums
-				});
+					novedades: results[0],
+					// genres: results[1]
+					// tracklist: tracklist,
+				})
 			}).catch(error => res.send(error));
 	},
 };
 
 module.exports = mainController;
+
+// <% genres.forEach(genre => { %>
+// 	<a class="dropdown-item" href="/<%= genre.name %>"><%= genre.name %></a>
+// 	<% }) %>

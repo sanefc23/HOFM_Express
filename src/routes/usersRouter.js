@@ -38,12 +38,23 @@ let loginValidations = [
     }).withMessage('La contraseña debe tener por lo menos 6 caracteres.'),
 ]
 
+// Render + Process Register Form
 router.get("/register", usersController.register);
 router.post("/register", registerValidations, usersController.createUser);
+
+// Render + Process Login Form
 router.get("/login", usersController.userLogin);
 router.post("/login", loginValidations, usersController.processLogin);
+
+// Render All Users
+router.get("/admin")
+
+// Render + Process User Edit
 router.get("/editUser", usersController.userEdit);
 router.get("/editUser/?:idUser", usersController.userEdit);
+
+// Verify user's session
 router.get("/checkLogin", usersController.check);
+
 module.exports = router;
 

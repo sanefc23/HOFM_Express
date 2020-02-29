@@ -1,32 +1,53 @@
-<header>
-    <div class="container">
-        <a href="/" class="logo-button"><img id="logo" href="/" src="/images/logo2.png" alt=""></a>
-    </div>
-    <nav id="site-nav" class="site-nav">
-        <ul>
-            <li><a href=""><i class="fas fa-play site-nav--icon"></i>CD</a></li>
-            <li><a href=""><i class="fas fa-pause site-nav--icon"></i>Vinilo</a></li>
-            <li><a href=""><i class="fas fa-step-forward site-nav--icon"></i>DVD</a></li>
-            <li><a href=""><i class="fas fa-stop site-nav--icon"></i>Género</a></li>
-            <li><a href=""><i class="fas fa-search site-nav--icon"></i>
-                    <input class="searchBar" type="search" placeholder="Buscar por título o autor..."></a></li>
+<nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="/"><img class="logo" href="/" src="/images/logo2.png" alt=""></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/">CD</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/">DVD</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/">Vinilo</a>
+            </li>
+            <li class="nav-item">
+                <div class="dropdown">
+                    <a class="nav-link" href="" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Géneros <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <!-- Insert forEach of genres here -->
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item">
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-light btn-sm my-2 my-sm-0" type="submit"><i
+                            class="fas fa-search"></i></button>
+                </form>
+            </li>
         </ul>
-    </nav>
-    <div id="menu-toggle" class="menu-toggle" onClick="cambiarClase()">
-        <div class="hamburger"></div>
     </div>
-
-    <nav id="site-nav2" class="site-nav2">
-        <ul>
-            <li><a href="/users/register" class="user navbar-brand">Registrarse</a></li>
-            <li><a href="/users/login" class="user navbar-brand">Ingresar</a></li>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/users/login">Ingresar</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/users/register">Registrarme</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/"><img class="user-logo" src="/images/user.png" alt=""></a>
+            </li>
+            <li class="nav-item">
+                <a href="/products/cart"><img class="cart-logo" src="/images/cart.png" alt=""></a>
+            </li>
         </ul>
-    </nav>
-    <div id="menu-toggle2" class="menu-toggle2" onClick="cambiarClase2()">
-        <img id="user-icons" src="/images/user.png">
-        <a href="/products/cart">
-            <img id="user-icons" src="/images/cart.png" alt="">
-        </a>
     </div>
-</header>
-<script src="/js/navapp.js"></script>
+</nav>
