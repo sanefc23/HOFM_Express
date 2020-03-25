@@ -5,31 +5,26 @@ body {
   color: white;
 }
 
-/* .frame {
-  padding: 0em 1.5em;
-} */
-
 #title {
-  font-size: 2.5vw;
-  padding: 0.6em 0em 0em 0.5em;
-  font-weight: normal;
+  font-size: 5vw;
+  padding: 0.8em 0em 0em 0.7em;
+  font-weight: bold;
 }
 
 #catalog-title {
-  font-size: 2vw;
-  font-weight: normal;
-  margin-left: 1.2vw;
+  font-size: 5vw;
+  text-align: center;
+  font-weight: bold;
   margin-top: 1.4vh;
 }
 
 .wrapper {
   display: inline-flex;
-  background-color: rgba(0, 0, 0, 0.5);
-  width: 200%;
+  width: 100%;
   flex-wrap: nowrap;
   box-sizing: border-box;
   margin: 0 auto;
-  padding: 0.8em 1.5em;
+  padding: 0em 0.5em;
   justify-content: flex-start;
   align-items: center;
   overflow-y: auto;
@@ -40,25 +35,25 @@ body {
   flex-wrap: wrap;
   margin: 1.2em;
   padding: 0;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
 }
 
 .product {
-  margin-right: 1em;
+  margin: 0.5em;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
 }
 
 #album-cover {
-  width: 15vw;
+  width: 40vw;
 }
 
 #artist, #album {
   font-size: 2vh;
   margin: 2px;
-  width: 14vw;
+  width: 39vw;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -72,7 +67,7 @@ body {
   background-color: rgba(247, 170, 3, 0.85);
   color: white;
   height: 4vh;
-  width: 15vw;
+  width: 40vw;
   border: none;
   border-radius: 2px;
   margin-top: 0.2em;
@@ -83,23 +78,54 @@ body {
   background-color: rgb(253, 213, 127);
 }
 
-#delete {
+.delete {
   background-color: rgba(230, 100, 100, 0.85);
   color: white;
   height: 4vh;
-  width: 15vw;
+  width: 40vw;
   border: none;
   border-radius: 2px;
   margin-bottom: 2em;
 }
 
-#delete:hover {
+.delete:hover {
   background-color: rgb(221, 140, 140);
 }
 
 .footer {
-  position: relative;
-  margin-top: 4vh;
+  position: absolute;
+  bottom: 0vh;
 }
 
-@media(min-width: 426px) {}
+@media(min-width: 426px) {
+  #title {
+    font-size: 2.5vw;
+    padding: 0.6em 0em 0em 0.4em;
+  }
+  #catalog-title {
+    font-size: 2.5vw;
+    padding: 0.4em 0em 0em 0.7em;
+  }
+  .catalog {
+    margin: 0.4em;
+    justify-content: flex-center;
+  }
+  .product {
+    margin-right: 0.4em;
+  }
+  #album-cover {
+    width: 15vw;
+  }
+  #artist, #album {
+    width: 14vw;
+  }
+  #artist {
+    font-weight: bold;
+  }
+  #update {
+    width: 15vw;
+  }
+  .delete {
+    width: 15vw;
+  }
+}

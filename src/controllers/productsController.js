@@ -13,7 +13,6 @@ const productsController = {
         let genres = Genres.findAll({
             order: [['name', 'ASC']],
         });
-
         Promise
             .all([artists, genres])
             .then(results => {

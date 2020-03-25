@@ -13,16 +13,15 @@
                 <h5 id="artist"><%= allProducts[i].artist.name %></h5>
                 <h5 id="album"><%= allProducts[i].title %></h5>
                 <a href=/products/all/edit/<%= allProducts[i].id %>><button id="update">Editar</button></a>
-                <form action="/products/all/delete/<%= allProducts[i].id %>?_method=DELETE" method="POST">
-                    <button id="delete">Eliminar</button>
+                <form class="delete-product" action="/products/all/delete/<%= allProducts[i].id %>?_method=DELETE"
+                    method="POST">
+                    <button class="delete"
+                        onclick="return confirm('Are you sure you want to delete this item?');">Eliminar</button>
                 </form>
             </section>
             <% } %>
         </div>
     </div>
     <%- include('partials/footer.ejs') %>
-</div>
-<script src="/js/navapp.js"></script>
-</body>
 
-</html>
+    </html>

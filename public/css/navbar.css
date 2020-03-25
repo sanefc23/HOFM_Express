@@ -4,7 +4,7 @@
     width: 100vw;
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
-    height: 8vh;
+    height: 7vh;
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -14,8 +14,9 @@
 }
 
 .nav-item, .nav-link {
+    display: inline-flex;
     color: white;
-    padding-left: 2vw;
+    margin-right: 1em;
 }
 
 .nav-link:hover {
@@ -24,17 +25,33 @@
     border-radius: 5px;
 }
 
+.navbar-collapse {
+    background-color: rgba(0, 0, 0);
+}
+
 .dropdown {
-    background-color: none;
+    background-color: transparent;
 }
 
 .navbar-nav {
     display: flex;
     align-items: center;
+    justify-content: center;
+}
+
+.fa-bars {
+    color: white;
 }
 
 .cart-logo, .user-logo {
-    width: 2.4vw;
+    width: 4.5vw;
 }
 
-@media (min-width:769px) {}
+@media (min-width:992px) {
+    .cart-logo, .user-logo {
+        width: 2.4vw;
+    }
+    .navbar-collapse {
+        background-color: transparent;
+    }
+}
