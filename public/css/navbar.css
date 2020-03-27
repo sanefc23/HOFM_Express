@@ -4,12 +4,12 @@
     width: 100vw;
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
-    height: 7vh;
+    height: 6vh;
     font-family: 'Montserrat', sans-serif;
 }
 
 .logo {
-    height: 6vh;
+    height: 4vh;
     margin: 0 auto;
 }
 
@@ -48,6 +48,13 @@
 }
 
 @media (min-width:992px) {
+    .navbar {
+        height: 7vh;
+    }
+    .logo {
+        height: 6vh;
+        margin: 0 auto;
+    }
     .cart-logo, .user-logo {
         width: 2.4vw;
     }

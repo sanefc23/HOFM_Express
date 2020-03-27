@@ -24,8 +24,8 @@ body {
   width: 100vw;
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
-  position: absolute;
-  bottom: 0;
+  position: relative;
+  margin-bottom: 0em;
   height: 7vh;
   text-align: center;
   display: flex;
@@ -44,4 +44,17 @@ body {
 
 @media (max-width:768px) {}
 
-@media (min-width:769px) {}
+@media (min-width:769px) {
+  .footer {
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    position: relative;
+    margin-top: 2em;
+    height: 7vh;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

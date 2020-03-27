@@ -7,6 +7,7 @@ const logger = require('morgan');
 const path = require('path');
 const methodOverride = require('method-override');
 const session = require('express-session');
+// const genres = require('./middlewares/databaseQuery');
 
 
 // ************ express() - (don't touch) ************
@@ -22,6 +23,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(methodOverride("_method"));
 app.use(session({ secret: "secret" }));
+// app.use(getGenres());
 
 // ************ Template Engine - (don't touch) ************
 app.set('view engine', 'ejs');
