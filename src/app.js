@@ -40,6 +40,11 @@ app.use('/', mainRouter);
 app.use('/products', productsRouter);
 app.use('/users', usersRouter);
 
+// 404 custom error
+app.get('/not-found', (req, res) => {
+  res.status(404).render('404', { customCss: null });
+})
+
 // ************ DON'T TOUCH FROM HERE ************
 // ************ catch 404 and forward to error handler ************
 app.use((req, res, next) => next(createError(404)));

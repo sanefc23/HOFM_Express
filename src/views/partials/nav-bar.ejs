@@ -25,7 +25,7 @@
                         <!-- Insert forEach of genres here -->
                         <% genres.forEach(oneGenre => { %>
                             <!-- En el href tenés que enviar a la ruta que toma el ID de ese género y trae la data -->
-                            <a class="dropdown-item" href="<%= oneGenre.id %> "> <%= oneGenre.name %></a>
+                            <a class="dropdown-item" href="/not-found"> <%= oneGenre.name %></a>
                         <% }) %>
                     </div>
                 </div>

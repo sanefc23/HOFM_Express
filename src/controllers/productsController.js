@@ -47,10 +47,15 @@ const productsController = {
                 include: ['artist', 'genre']
             })
             .then(album => {
-                return res.render('productDetail', {
-                    customCss: '/css/prodDetail.css',
-                    album: album
-                });
+                // Si la consulta trae un album
+                if (album) {
+                    return res.render('productDetail', {
+                        customCss: '/css/prodDetail.css',
+                        album: album
+                    });
+                }
+                // De lo contrario rendereas un 404
+                return res.redirect('/not-found');
             }).catch(error => res.send(error));
     },
 
