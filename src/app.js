@@ -21,7 +21,7 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(cookieParser());
 app.use(methodOverride("_method"));
-app.use(session({ secret: "secret" }));
+app.use(session({ secret: "secret", resave: false, saveUninitialized: true }));
 
 // ************ Template Engine - (don't touch) ************
 app.set('view engine', 'ejs');
