@@ -1,5 +1,5 @@
 
-// ************ Require's ************
+//  Require's 
 const createError = require('http-errors');
 const cookieParser = require('cookie-parser');
 const express = require('express');
@@ -11,10 +11,10 @@ const session = require('express-session');
 const genresMiddleware = require('./middlewares/genresInNavbar');
 
 
-// ************ express() - (don't touch) ************
+//  express() - (don't touch) 
 const app = express();
 
-// ************ Middlewares - (don't touch) ************
+//  Middlewares - (don't touch) 
 app.use(express.static(path.join(__dirname, '../public'))); // Necesario para los archivos estáticos en el folder /public
 app.use(express.urlencoded({
   extended: false
@@ -26,12 +26,12 @@ app.use(methodOverride("_method"));
 app.use(session({ secret: "secret" }));
 app.use(genresMiddleware);
 
-// ************ Template Engine - (don't touch) ************
+//  Template Engine - (don't touch) 
 app.set('view engine', 'ejs');
-app.set('views', './src/views'); // Seteo de la ubicación de la carpeta "views"
+app.set('views', './src/views');
 
-// ************ WRITE YOUR CODE FROM HERE ************
-// ************ Route System require and use() ************
+//  WRITE YOUR CODE FROM HERE 
+//  Route System require and use() 
 const mainRouter = require('./routes/mainRoutes');
 const productsRouter = require("./routes/productsRoutes");
 const usersRouter = require("./routes/usersRoutes");
@@ -47,11 +47,11 @@ app.get('/not-found', (req, res) => {
   res.status(404).render('404', { customCss: null });
 })
 
-// ************ DON'T TOUCH FROM HERE ************
-// ************ catch 404 and forward to error handler ************
+//  DON'T TOUCH FROM HERE 
+//  catch 404 and forward to error handler 
 app.use((req, res, next) => next(createError(404)));
 
-// ************ error handler ************
+//  error handler 
 app.use((err, req, res, next) => {
   // set locals, only providing error in development
   res.locals.message = err.message;
@@ -63,5 +63,5 @@ app.use((err, req, res, next) => {
   res.render('error');
 });
 
-// ************ exports app - dont'touch ************
+//  exports app - dont'touch 
 module.exports = app;

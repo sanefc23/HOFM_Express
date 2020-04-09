@@ -25,5 +25,7 @@ module.exports = {
                 });
             })
             .catch(error => res.json(error));
-    }
+    },
+
+    users: (req, res) => { res.send('Not available') }
 }
