@@ -32,13 +32,15 @@ app.set('views', './src/views'); // Seteo de la ubicación de la carpeta "views"
 
 // ************ WRITE YOUR CODE FROM HERE ************
 // ************ Route System require and use() ************
-const mainRouter = require('./routes/mainRouter');
-const productsRouter = require("./routes/productsRouter");
-const usersRouter = require("./routes/usersRouter");
+const mainRouter = require('./routes/mainRoutes');
+const productsRouter = require("./routes/productsRoutes");
+const usersRouter = require("./routes/usersRoutes");
+const apiRouter = require('./routes/apiRoutes');
 
 app.use('/', mainRouter);
 app.use('/products', productsRouter);
 app.use('/users', usersRouter);
+app.use('/api', apiRouter);
 
 // 404 custom error
 app.get('/not-found', (req, res) => {

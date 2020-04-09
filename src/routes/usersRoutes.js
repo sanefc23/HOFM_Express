@@ -3,7 +3,7 @@ const express = require('express');
 const router = express.Router();
 const usersController = require('../controllers/usersController');
 const { check, body } = require('express-validator');
-const db = require('../database/models/');
+const db = require('../database/models');
 
 const Users = db.users;
 
