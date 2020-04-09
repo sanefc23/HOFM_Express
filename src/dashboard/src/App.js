@@ -3,6 +3,17 @@ import Sidebar from './components/Sidebar'
 import Navbar from './components/Header'
 import Metric from './components/Metric'
 
+
+// fetch('http://localhost:3000/').then(response => response.json())
+// .then(data => {
+//     let totalTag = document.querySelector('#totalAlbums')
+//     totalTag.innerHTML = data.total_albums;
+//     let albumsTableTag = document.querySelector('#albumsContent')
+//     totalTag.innerHTML = data.total_albums;
+// })
+// .catch(e => console.log(e)
+// );
+
 let data = [{
   title: 'Products in Data Base',
   border: 'border-left-primary',

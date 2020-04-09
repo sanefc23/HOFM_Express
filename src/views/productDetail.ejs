@@ -35,9 +35,20 @@
         </div>
 
         <div class="child-frame2">
-            <h3 class="tracklist">Tracklist no disponible.</h3>
+
+            <ol class="tracklist">
+                <h3>Tracklist</h3>
+                <br>
+                <%if (tracklist.length != 0) { %>
+                <% for (let i = 0; i < tracklist.length; i++) { %>
+                <li><%= tracklist[i].name %></li>
+                <% } %>
+                <%} else { %>
+                <h5>No disponible</h5>
+                <% } %>
+            </ol>
         </div>
     </div>
     <%- include('partials/footer.ejs') %>
 
-</html>
+    </html>

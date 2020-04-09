@@ -3,6 +3,7 @@ const db = require('../database/models/');
 const Albums = db.albums;
 const Artists = db.artists;
 const Genres = db.genres;
+const Songs = db.songs;
 
 const productsController = {
     renderAdd: (req, res) => {
@@ -42,20 +43,24 @@ const productsController = {
     },
 
     renderDetail: (req, res) => {
+
         Albums
             .findByPk(req.params.id, {
                 include: ['artist', 'genre']
             })
             .then(album => {
-                // Si la consulta trae un album
-                if (album) {
-                    return res.render('productDetail', {
-                        customCss: '/css/prodDetail.css',
-                        album: album
-                    });
-                }
-                // De lo contrario rendereas un 404
-                return res.redirect('/not-found');
+                Songs.findAll({ where: { album_id: req.params.id } }).then(tracklist => {
+                    // Si la consulta trae un album
+                    if (album) {
+                        return res.render('productDetail', {
+                            customCss: '/css/prodDetail.css',
+                            album: album,
+                            tracklist: tracklist
+                        });
+                    }
+                    // De lo contrario rendereas un 404
+                    return res.redirect('/not-found');
+                }).catch(error => res.send(error));
             }).catch(error => res.send(error));
     },
 

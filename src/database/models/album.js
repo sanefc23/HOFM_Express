@@ -26,7 +26,6 @@ module.exports = (sequelize, DataTypes) => {
     const album = sequelize.define(alias, columns, config);
 
     album.associate = (models) => {
-        // belongsTo 
         album.belongsTo(models.artists, {
             as: 'artist',
             foreignKey: 'artists_id'
