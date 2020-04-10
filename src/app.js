@@ -7,9 +7,7 @@ const logger = require('morgan');
 const path = require('path');
 const methodOverride = require('method-override');
 const session = require('express-session');
-// const genres = require('./middlewares/databaseQuery');
 const genresMiddleware = require('./middlewares/genresInNavbar');
-
 
 //  express() - (don't touch) 
 const app = express();
@@ -45,6 +43,11 @@ app.use('/api', apiRouter);
 // 404 custom error
 app.get('/not-found', (req, res) => {
   res.status(404).render('404', { customCss: null });
+})
+
+// Acceso Denegado
+app.get('/denied-access', (req, res) => {
+  res.status(401).render('deniedAccess', { customCss: null });
 })
 
 //  DON'T TOUCH FROM HERE 

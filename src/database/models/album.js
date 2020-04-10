@@ -8,14 +8,46 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false,
             autoIncrement: true,
         },
-        title: DataTypes.STRING,
-        artists_id: DataTypes.INTEGER,
-        description: DataTypes.STRING,
-        front_cover: DataTypes.STRING,
-        back_cover: DataTypes.STRING,
-        rating: DataTypes.INTEGER,
-        release_date: DataTypes.INTEGER,
-        genre_id: DataTypes.INTEGER,
+        title: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        artists_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        genre_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        description: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        format: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        price: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        rating: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        front_cover: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        back_cover: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        release_date: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        }
     };
 
     let config = {

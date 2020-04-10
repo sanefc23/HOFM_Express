@@ -71,11 +71,11 @@ const usersController = {
                         if (req.body.rememberMe != undefined) {
                             res.cookie('rememberMe', userToLog.email, { maxAge: 60000 });
                         }
-                        return res.send(`Bienvenidx ${req.session.loggedUser.email}`);
+                        return res.redirect('/');
                     } else {
                         return res.render('loginPage', {
                             customCss: '/css/loginPage.css',
-                            registerErrors: [{ msg: 'error con la contraseña.' }]
+                            registerErrors: [{ msg: 'Alguno de los datos es incorrecto.' }]
                         });
                     }
                 }
