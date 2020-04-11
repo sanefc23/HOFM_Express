@@ -30,6 +30,7 @@ const productsController = {
     },
 
     store: (req, res, next) => {
+        console.log(req.body);
         if (req.session.loggedUser == undefined) {
             return res.redirect('/denied-access');
         } else if (req.session.loggedUser.email == 'san.efc@gmail.com') {
@@ -41,12 +42,6 @@ const productsController = {
                 })
                 .then(product => res.redirect('/products/all')).catch(error => res.send(error));
         }
-    },
-
-    renderCart: (req, res) => {
-        res.render('productCart', {
-            customCss: '/css/productCart.css'
-        });
     },
 
     renderDetail: (req, res) => {
@@ -70,8 +65,7 @@ const productsController = {
             }).catch(error => res.send(error));
     },
 
-    // /products/all debe ser una ruta solo accesible por el administrador
-
+    // --- Complete Catalog View (Admin only) ---
     showAll: (req, res) => {
         if (req.session.loggedUser == undefined) {
             return res.redirect('/denied-access');
@@ -89,6 +83,7 @@ const productsController = {
         }
     },
 
+    //--- Edit Product View (Admin only) ---
     renderEdit: (req, res) => {
         if (req.session.loggedUser == undefined) {
             return res.redirect('/denied-access');
@@ -120,6 +115,7 @@ const productsController = {
         }
     },
 
+    //--- Process Edit Product (Admin only) ---
     update: function (req, res) {
         if (req.session.loggedUser == undefined) {
             return res.redirect('/denied-access');
@@ -140,6 +136,7 @@ const productsController = {
         }
     },
 
+    //--- Process Delete Product (Admin only) ---
     destroy: (req, res) => {
         if (req.session.loggedUser == undefined) {
             return res.redirect('/denied-access');
@@ -160,7 +157,68 @@ const productsController = {
                         .catch(error => res.send(error));
                 }).catch(error => res.send(error));
         }
-    }
+    },
+
+    // --- Cart ---
+    renderCart: (req, res) => {
+        res.render('productCart', {
+            customCss: '/css/productCart.css'
+        });
+    },
+
+    // addToCart: (req, res) => {
+    //     let serviceId = req.params.idProduct
+
+    //     //Busco el servicio
+    //     Services
+    //     .findByPk(serviceId)
+    //     .then(service => {
+    //         //Armo la operacion a registrar
+    //         let addItem = {
+    //             userId: req.session.userId,
+    //             serviceId: service.id,
+    //             quantity: req.body.quantity,
+    //             salePrice: service.price,
+    //         };
+
+
+    //         UsersServices
+    //             .create(addItem)
+    //             .then( item => {
+    //                 //return res.send(item);
+    //                 return res.redirect('/products/productCart');
+    //         })
+    //         .catch(error => {
+    //             return res.send(error);
+    //         })
+    //     })
+    //   },
+
+    // productCart: (req, res) => {
+    //     UsersServices
+    //         .findAll({
+    //             where: {
+    //                 userId: req.session.userId
+    //             },
+    //             include: ['service', 'user']
+    //         })
+    //         .then(userCart => {
+    //             //return res.send(userCart);
+    //             return res.render('products/productCart', { userCart });
+
+
+    //         })
+    //     //
+    // },
+    // updateCart: (req, res) => {
+    //     UsersServices
+    //         .findByPk(req.params.idProduct)
+    //         .then(item => {
+    //             item.destroy();
+    //             return res.redirect('/products/productCart');
+    //         });
+
+    // },
 };
 
 module.exports = productsController;

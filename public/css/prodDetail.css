@@ -51,8 +51,8 @@ h5 {
 }
 
 .info-mini-cards {
-    display: flex;
-    flex-direction: column;
+    display: inline-flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     background-color: rgba(255, 255, 255, 0.7);
@@ -61,25 +61,22 @@ h5 {
     height: 8vh;
 }
 
+.fa-star {
+    width: 1.5vw;
+}
+
+.addToCart-icon {
+    width: 2.2vw;
+}
+
+label {
+    margin: 0;
+}
+
 .info {
     font-size: 3.5vw;
     color: #484848;
     display: inline-block;
-}
-
-.format-picker {
-    position: relative;
-    background: none;
-    border: none;
-    color: #484848;
-    font-size: 3.5vw;
-    color: #484848;
-    display: inline-block;
-}
-
-.format-list {
-    background: rgba(255, 255, 255, 0.7);
-    border: none;
 }
 
 .footer {

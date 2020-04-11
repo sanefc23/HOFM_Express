@@ -8,7 +8,6 @@ const path = require('path');
 const methodOverride = require('method-override');
 const session = require('express-session');
 const genresMiddleware = require('./middlewares/genresInNavbar');
-
 //  express() - (don't touch) 
 const app = express();
 
