@@ -1,4 +1,3 @@
-
 //  Require's 
 const createError = require('http-errors');
 const cookieParser = require('cookie-parser');
@@ -8,6 +7,8 @@ const path = require('path');
 const methodOverride = require('method-override');
 const session = require('express-session');
 const genresMiddleware = require('./middlewares/genresInNavbar');
+const loggedUserMiddleware = require('./middlewares/loggedUserMiddleware');
+
 //  express() - (don't touch) 
 const app = express();
 
@@ -22,6 +23,7 @@ app.use(cookieParser());
 app.use(methodOverride("_method"));
 app.use(session({ secret: "secret" }));
 app.use(genresMiddleware);
+app.use(loggedUserMiddleware);
 
 //  Template Engine - (don't touch) 
 app.set('view engine', 'ejs');

@@ -27,7 +27,3 @@ const mainController = {
 };
 
 module.exports = mainController;
-
-// <% genres.forEach(genre => { %>
-// 	<a class="dropdown-item" href="/<%= genre.name %>"><%= genre.name %></a>
-// 	<% }) %>

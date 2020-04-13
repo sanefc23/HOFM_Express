@@ -1,0 +1,51 @@
+body {
+    color: #484848;
+}
+
+.frame {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2em;
+}
+
+.user-card {
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40vw;
+    height: 65vh;
+}
+
+#action-buttons {
+    display: inline-flex;
+    margin: 0 auto;
+}
+
+#editprofile-btn, #logout-btn {
+    color: white;
+    font-size: 2vh;
+    border: none;
+    height: 6vh;
+    width: 16vw;
+    border-radius: 0px 0px 20px 20px;
+}
+
+#editprofile-btn {
+    background-color: rgba(247, 170, 3, 0.85);
+}
+
+#logout-btn {
+    background-color: rgba(230, 100, 100, 0.85);
+}
+
+#editprofile-btn:hover {
+    background-color: rgb(253, 213, 127);
+}
+
+#logout-btn:hover {
+    background-color: rgb(230, 100, 100);
+}

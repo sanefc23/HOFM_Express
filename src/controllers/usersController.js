@@ -56,7 +56,6 @@ const usersController = {
                     email: req.body.email,
                 }
             }).then(userToLog => {
-
                 userToLog = userToLog[0];
 
                 if (userToLog == undefined) {
@@ -66,10 +65,9 @@ const usersController = {
                     });
                 } else {
                     if (bcrypt.compareSync(req.body.password, userToLog.password)) {
-
                         req.session.loggedUser = userToLog;
                         if (req.body.rememberMe != undefined) {
-                            res.cookie('rememberMe', userToLog.email, { maxAge: 60000 });
+                            res.cookie('userCookie', userToLog.id, { maxAge: 60000 * 100 });
                         }
                         return res.redirect('/');
                     } else {
@@ -84,17 +82,36 @@ const usersController = {
         }
     },
 
+    // Check logged user
     check: (req, res) => {
-        console.log(req.session.loggedUser);
-        if (req.session.loggedUser == undefined) {
-            return res.send("No estás loggeado");
-        } else {
+        if (res.locals.isLogged) {
             return res.send(`El usuario loggeado es: ${req.session.loggedUser.email}`);
+        } else {
+            return res.send("No estás loggeado");
         }
     },
 
-    // *** USER EDIT ***
+    //  User's profile
+    userProfile: (req, res) => {
 
+        Users
+            .findByPk(req.session.userId)
+            .then(userLogged => {
+                res.render('userProfile', {
+                    customCss: '/css/userProfile.css',
+                    userLogged
+                })
+            })
+            .catch(error => res.send(error))
+    },
+
+    logout: (req, res) => {
+        req.session.destroy();
+        res.cookie('userCookie', null, { maxAge: 1 });
+        res.redirect('/');
+    },
+
+    // Edit user's data
     userEdit: (req, res) => {
         // let idUser = req.params.idUser;
         // let userToEdit = users[idUser];

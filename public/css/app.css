@@ -18,6 +18,11 @@ body {
   overflow-x: hidden;
 }
 
+a:hover, a:visited {
+  text-decoration: none;
+  color: white;
+}
+
 /*--------FOOTER--------*/
 
 .footer {

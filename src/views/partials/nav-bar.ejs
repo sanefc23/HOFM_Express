@@ -24,8 +24,8 @@
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                         <!-- Insert forEach of genres here -->
                         <% genres.forEach(oneGenre => { %>
-                            <!-- En el href tenés que enviar a la ruta que toma el ID de ese género y trae la data -->
-                            <a class="dropdown-item" href="/not-found"> <%= oneGenre.name %></a>
+                        <!-- En el href tenés que enviar a la ruta que toma el ID de ese género y trae la data -->
+                        <a class="dropdown-item" href="/not-found"> <%= oneGenre.name %></a>
                         <% }) %>
                     </div>
                 </div>
@@ -34,25 +34,28 @@
                 <form class="form-inline my-2 my-lg-0">
                     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-light btn-sm my-2 my-sm-0" type="submit"><i
-                        class="fas fa-search"></i></button>
+                            class="fas fa-search"></i></button>
                 </form>
             </li>
         </ul>
     </div>
     <div class="collapse navbar-collapse flex-row-reverse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-3">
+            <% if (isLogged) { %>
+            <li class="nav-item">
+                <a class="nav-link" href="/users/profile"><img class="user-logo" src="/images/user.png" alt=""></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/products/cart"><img class="cart-logo" src="/images/cart.png" alt=""></a>
+            </li>
+            <% } else { %>
             <li class="nav-item">
                 <a class="nav-link" id="loginButton" href="/users/login">Ingresar</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" id="registerButton" href="/users/register">Registrarme</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/"><img class="user-logo" src="/images/user.png" alt=""></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/products/cart"><img class="cart-logo" src="/images/cart.png" alt=""></a>
-            </li>
+            <% } %>
         </ul>
     </div>
 </nav>
