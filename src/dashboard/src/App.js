@@ -1,24 +1,15 @@
-import React from 'react';
+// import React from 'react';
+import React, { Component } from 'react';
 import Sidebar from './components/Sidebar'
 import Navbar from './components/Header'
 import Metric from './components/Metric'
-
-
-fetch('http://localhost:3030/api/products').then(response => response.json())
-  .then(data => {
-    let totalTag = document.querySelector('#totalAlbums')
-    totalTag.innerHTML = data.total_albums;
-    let albumsTableTag = document.querySelector('#albumsContent')
-    totalTag.innerHTML = data.total_albums;
-  })
-  .catch(e => console.log(e)
-  );
+import Footer from './components/Footer'
 
 let data = [{
   title: 'Cantidad de Albums',
   border: 'border-left-primary',
   textColor: 'text-primary',
-  value: 135,
+  value: 238,
   icon: 'fa-clipboard-list',
 },
 {
@@ -36,98 +27,127 @@ let data = [{
   icon: 'fa-user-check',
 },
 
-]
+];
 
-function App() {
-  return (
-    <div id="wrapper">
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      totalUsers: '-',
+      totalProducts: '-',
+    }
+  }
 
-      <Sidebar />
+  componentDidMount() {
 
-      <div id="content-wrapper" className="d-flex flex-column" style={{ backgroundImage: 'url(/images/background.png)', backgroundSize: 'cover' }}>
+    fetch('http://localhost:3030/api/users')
+      .then(response => response.json())
+      .then(users => {
+        fetch('http://localhost:3030/api/products')
+          .then(response => response.json())
+          .then(products => {
+            this.setState({
+              totalAlbums: products.total_albums,
+              totalUsers: users.total_users
+            });
+          })
+      })
+      .catch(e => console.log(e)
+      );
+  }
 
-        <div id="content">
+  render() {
+    let { totalAlbums, totalUsers } = this.state;
+    return (
+      <div id="wrapper">
 
-          <Navbar />
+        <Sidebar />
 
-          <div className="container-fluid">
+        <div id="content-wrapper" className="d-flex flex-column" style={{ backgroundImage: 'url(/images/background.png)', backgroundSize: 'cover' }}>
 
-            <div className="row">
-              {data.map(function (unDato, i) {
-                return (
-                  < Metric
-                    title={unDato.title}
-                    value={unDato.value}
-                    textColor={unDato.textColor}
-                    icon={unDato.icon}
-                    border={unDato.border} />
-                );
-              })}
-            </div>
+          <div id="content">
 
-            <div className="row">
-              <div className="col-lg-6 mb-4">
-                <div className="card shadow mb-4">
-                  <div className="card-header py-3">
-                    <h6 className="m-0 font-weight-bold text-primary">Last product in Data Dase</h6>
-                  </div>
-                  <div className="card-body">
-                    <div className="text-center">
-                      <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{ width: "25rem" }} src="assets/images/product_dummy.svg" alt="image dummy" />
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, consequatur explicabo officia inventore libero veritatis iure voluptate reiciendis a magnam, vitae, aperiam voluptatum non corporis quae dolorem culpa exercitationem ratione?</p>
-                    <a target="_blank" rel="nofollow" href="/">View product detail</a>
-                  </div>
-                </div>
+            <Navbar />
+
+            <div className="container-fluid">
+
+              <div className="row">
+                {data.map(function (unDato, i) {
+                  return (
+                    < Metric
+                      title={unDato.title}
+                      value={unDato.value}
+                      textColor={unDato.textColor}
+                      icon={unDato.icon}
+                      border={unDato.border} />
+                  );
+                })}
               </div>
 
-              <div className="col-lg-6 mb-4">
-                <div className="card shadow mb-4">
-                  <div className="card-header py-3">
-                    <h6 className="m-0 font-weight-bold text-primary">Categories in Data Base</h6>
+              <div className="row">
+                <div className="col-lg-6 mb-4">
+                  <div className="card shadow mb-4">
+                    <div className="card-header py-3">
+                      <h6 className="m-0 font-weight-bold text-primary">Last product in Data Dase</h6>
+                    </div>
+                    <div className="card-body">
+                      <div className="text-center">
+                        <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{ width: "25rem" }} src="assets/images/product_dummy.svg" alt="image dummy" />
+                      </div>
+                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, consequatur explicabo officia inventore libero veritatis iure voluptate reiciendis a magnam, vitae, aperiam voluptatum non corporis quae dolorem culpa exercitationem ratione?</p>
+                      <a target="_blank" rel="nofollow" href="/">View product detail</a>
+                    </div>
                   </div>
-                  <div className="card-body">
-                    <div className="row">
-                      <div className="col-lg-6 mb-4">
-                        <div className="card bg-info text-white shadow">
-                          <div className="card-body">
-                            Category 01
+                </div>
+
+                <div className="col-lg-6 mb-4">
+                  <div className="card shadow mb-4">
+                    <div className="card-header py-3">
+                      <h6 className="m-0 font-weight-bold text-primary">Categories in Data Base</h6>
+                    </div>
+                    <div className="card-body">
+                      <div className="row">
+                        <div className="col-lg-6 mb-4">
+                          <div className="card bg-info text-white shadow">
+                            <div className="card-body">
+                              Category 01
 												</div>
+                          </div>
                         </div>
-                      </div>
-                      <div className="col-lg-6 mb-4">
-                        <div className="card bg-info text-white shadow">
-                          <div className="card-body">
-                            Category 02
+                        <div className="col-lg-6 mb-4">
+                          <div className="card bg-info text-white shadow">
+                            <div className="card-body">
+                              Category 02
 												</div>
+                          </div>
                         </div>
-                      </div>
-                      <div className="col-lg-6 mb-4">
-                        <div className="card bg-info text-white shadow">
-                          <div className="card-body">
-                            Category 03
+                        <div className="col-lg-6 mb-4">
+                          <div className="card bg-info text-white shadow">
+                            <div className="card-body">
+                              Category 03
 												</div>
+                          </div>
                         </div>
-                      </div>
-                      <div className="col-lg-6 mb-4">
-                        <div className="card bg-info text-white shadow">
-                          <div className="card-body">
-                            Category 04
+                        <div className="col-lg-6 mb-4">
+                          <div className="card bg-info text-white shadow">
+                            <div className="card-body">
+                              Category 04
 												</div>
+                          </div>
                         </div>
-                      </div>
-                      <div className="col-lg-6 mb-4">
-                        <div className="card bg-info text-white shadow">
-                          <div className="card-body">
-                            Category 05
+                        <div className="col-lg-6 mb-4">
+                          <div className="card bg-info text-white shadow">
+                            <div className="card-body">
+                              Category 05
 												</div>
+                          </div>
                         </div>
-                      </div>
-                      <div className="col-lg-6 mb-4">
-                        <div className="card bg-info text-white shadow">
-                          <div className="card-body">
-                            Category 06
+                        <div className="col-lg-6 mb-4">
+                          <div className="card bg-info text-white shadow">
+                            <div className="card-body">
+                              Category 06
 												</div>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -136,20 +156,14 @@ function App() {
               </div>
             </div>
           </div>
+
+          <Footer />
+
         </div>
 
-        <footer className="sticky-footer bg-white">
-          <div className="container my-auto">
-            <div className="copyright text-center my-auto">
-              <span>Copyright &copy; Dashboard 2020</span>
-            </div>
-          </div>
-        </footer>
-
-      </div>
-
-    </div >
-  );
+      </div >
+    );
+  }
 }
 
 export default App;
