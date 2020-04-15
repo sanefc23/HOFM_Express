@@ -4,18 +4,18 @@ import Navbar from './components/Header'
 import Metric from './components/Metric'
 
 
-// fetch('http://localhost:3000/').then(response => response.json())
-// .then(data => {
-//     let totalTag = document.querySelector('#totalAlbums')
-//     totalTag.innerHTML = data.total_albums;
-//     let albumsTableTag = document.querySelector('#albumsContent')
-//     totalTag.innerHTML = data.total_albums;
-// })
-// .catch(e => console.log(e)
-// );
+fetch('http://localhost:3030/api/products').then(response => response.json())
+  .then(data => {
+    let totalTag = document.querySelector('#totalAlbums')
+    totalTag.innerHTML = data.total_albums;
+    let albumsTableTag = document.querySelector('#albumsContent')
+    totalTag.innerHTML = data.total_albums;
+  })
+  .catch(e => console.log(e)
+  );
 
 let data = [{
-  title: 'Products in Data Base',
+  title: 'Cantidad de Albums',
   border: 'border-left-primary',
   textColor: 'text-primary',
   value: 135,
@@ -30,8 +30,8 @@ let data = [{
 },
 {
   title: 'Users quantity',
-  border: 'border-left-warning',
-  textColor: 'text-warning',
+  border: 'border-left-danger',
+  textColor: 'text-danger',
   value: 38,
   icon: 'fa-user-check',
 },
@@ -44,17 +44,13 @@ function App() {
 
       <Sidebar />
 
-      <div id="content-wrapper" className="d-flex flex-column">
+      <div id="content-wrapper" className="d-flex flex-column" style={{ backgroundImage: 'url(/images/background.png)', backgroundSize: 'cover' }}>
 
         <div id="content">
 
           <Navbar />
 
           <div className="container-fluid">
-
-            <div className="d-sm-flex align-items-center justify-content-between mb-4">
-              <h1 className="h3 mb-0 text-gray-800">App Dashboard</h1>
-            </div>
 
             <div className="row">
               {data.map(function (unDato, i) {
@@ -150,9 +146,9 @@ function App() {
           </div>
         </footer>
 
-          </div>
+      </div>
 
-        </div>
+    </div >
   );
 }
 

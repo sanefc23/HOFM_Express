@@ -2,8 +2,10 @@ import React from 'react';
 
 function Navbar() {
     return (
-        <nav className="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
+        <nav className="navbar navbar-expand navbar-dark topbar mb-4 static-top shadow">
+            <div className="d-sm-flex align-items-center justify-content-between">
+                <h1 className="h3 mb-0 text-white">App Dashboard</h1>
+            </div>
             <button id="sidebarToggleTop" className="btn btn-link d-md-none rounded-circle mr-3">
                 <i className="fa fa-bars"></i>
             </button>
@@ -28,7 +30,7 @@ function Navbar() {
 
                 <li className="nav-item dropdown no-arrow">
                     <a className="nav-link dropdown-toggle" href="/" id="userDropdown">
-                        <span className="mr-2 d-none d-lg-inline text-gray-600 small">Walter White</span>
+                        <span className="mr-2 d-none d-lg-inline text-white small">Walter White</span>
                         <img className="img-profile rounded-circle" src="assets/images/dummy-avatar.jpg" width="60" />
                     </a>
                 </li>

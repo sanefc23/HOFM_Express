@@ -2,7 +2,7 @@ import React from 'react';
 
 function Sidebar() {
   return (
-    <ul className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+    <ul className="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <a className="sidebar-brand d-flex align-items-center justify-content-center" href="/">
         <div className="sidebar-brand-icon">

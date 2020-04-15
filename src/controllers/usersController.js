@@ -97,9 +97,11 @@ const usersController = {
         Users
             .findByPk(req.session.userId)
             .then(userLogged => {
+                console.log(userLogged);
+
                 res.render('userProfile', {
                     customCss: '/css/userProfile.css',
-                    userLogged
+                    user: userLogged
                 })
             })
             .catch(error => res.send(error))
