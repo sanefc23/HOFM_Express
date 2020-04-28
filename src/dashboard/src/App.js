@@ -86,8 +86,8 @@ class App extends Component {
 
               <div className="row">
                 <div className="col-lg-6 mb-4">
-                  <div className="card shadow mb-4">
-                    <div className="card-header py-3">
+                  <div className="card shadow mb-4" style={{ backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
+                    <div className="card-header py-3" style={{ backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
                       <h6 className="m-0 font-weight-bold text-primary">Last product in Data Dase</h6>
                     </div>
                     <div className="card-body">
@@ -101,8 +101,8 @@ class App extends Component {
                 </div>
 
                 <div className="col-lg-6 mb-4">
-                  <div className="card shadow mb-4">
-                    <div className="card-header py-3">
+                  <div className="card shadow mb-4" style={{ backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
+                    <div className="card-header py-3" style={{ backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
                       <h6 className="m-0 font-weight-bold text-primary">Categories in Data Base</h6>
                     </div>
                     <div className="card-body">
