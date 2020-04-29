@@ -136,10 +136,52 @@ const productsController = {
 
     // --- Cart ---
     renderCart: (req, res) => {
-        res.render('productCart', {
-            customCss: '/css/productCart.css'
-        });
+        if (req.cookies.userCart != undefined) {
+            let cartContentCookie = JSON.parse(req.cookies.userCart);
+            Albums
+                .findAll({
+                    include: ['artist'],
+                    where: { id: cartContentCookie }
+                })
+                .then(allAlbums => {
+                    res.render('productCart', {
+                        customCss: '/css/productCart.css',
+                        albums: allAlbums,
+                    });
+                }).catch(error => res.send(error));
+        } else {
+            res.send('Cart is empty');
+        }
     },
+
+    addToCartDetail: (req, res) => {
+        if (req.cookies.userCart != undefined) {
+            let cartContentCookie = JSON.parse(req.cookies.userCart);  // Parse from json to push new item
+            cartContentCookie.push(req.body.item); // Le metés a ese array que recuperaste el contenido nuevo
+            console.log(cartContentCookie)
+            res.cookie('userCart', JSON.stringify(cartContentCookie), { maxAge: 60000 * 100 }); // Volvés a setear la cookie
+        } else {
+            let cartContentCookie = [req.body.item]
+            res.cookie('userCart', JSON.stringify(cartContentCookie), { maxAge: 60000 * 100 }); // Seteo la cookie para que nunca mas sea undefined
+            console.log(cartContentCookie)
+        }
+        res.redirect('/');
+    },
+
+    carritoBorrar: (req, res) => {
+        Albums
+            .findAll({
+                include: ['artist']
+            })
+            .then(allAlbums => {
+                return res.render('products/productCart', {
+                    albums: allAlbums,
+                    CartCookie
+                })
+            })
+            .catch(error => res.send(error));
+
+    }
 };
 
 module.exports = productsController;

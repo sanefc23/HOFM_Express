@@ -3,11 +3,10 @@ const router = express.Router();
 const multer = require('multer');
 let path = require('path');
 
-/*====== Controller ======*/
-const productsController = require('../controllers/productsController');
-
-// Admin Middleware
-const validateAdmin = require('../middlewares/validateAdmin')
+const productsController = require('../controllers/productsController'); // Controller 
+const validateAdmin = require('../middlewares/validateAdmin'); // Admin Middleware
+const cart = require('../middlewares/cartMiddleware'); // Cart Cookie Middleware
+const clearCart = require('../middlewares/clearCartMiddleware'); // Clear Cart Middleware
 
 // Multer implementation
 var storage = multer.diskStorage({
@@ -31,6 +30,7 @@ router.post('/add', validateAdmin, upload.any('file'), productsController.store)
 
 // Show cart - GET
 router.get('/cart', productsController.renderCart);
+router.post
 
 // Show complete catalog - GET
 router.get('/all', validateAdmin, productsController.showAll);
@@ -45,7 +45,10 @@ router.put('/all/edit/:id', validateAdmin, upload.any('file'), productsControlle
 router.delete('/all/delete/:id', validateAdmin, productsController.destroy);
 
 // Show product detail - GET
-router.get('/:id', productsController.renderDetail);
+router.get('/:id', cart, productsController.renderDetail);
+
+// Show product detail - POST
+router.post('/:id', cart, productsController.addToCartDetail);
 
 
 module.exports = router;

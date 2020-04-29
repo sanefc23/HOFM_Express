@@ -1,55 +1,49 @@
 <%- include('partials/head.ejs') %>
 <div class="background">
     <%- include('partials/nav-bar.ejs') %>
+
     <div id="frame" class="col-8">
         <h3 id="section">Tus productos</h3>
+
+        <% albums.forEach(album => { %>
         <div id="cartItem" class="row">
-            <img class="col-2" id="album-cover" src="/images/albums/masseduction.jpg" alt="" />
+            <img class="col-2" id="album-cover" src="<%= album.front_cover%>" alt="" />
             <div id="title" class="col-3">
-                <h3>St. Vincent</h3>
-                <p>Masseduction</p>
+                <h3><%= album.artist.name %></h3>
+                <p><%= album.title %></p>
             </div>
             <div id="containers" class="col-6">
                 <div id="formatos">
-                    <p>Vinilo</p>
+                    <p class="containers-text" style="text-transform: uppercase;"><%= album.format %></p>
                 </div>
                 <div id="cantidad">
-                    <p>Cantidad</p>
+                    <p class="containers-text">Cantidad</p>
                 </div>
                 <div id="precio">
-                    <p>$650</p>
+                    <p class="containers-text">$ <%= album.price %></p>
                 </div>
             </div>
-            <img id="delete_item" class="col-1" src="/images/delete_item.png" alt="">
+            <form action="/products/carrito" method="POST"></form>
+            <input type="image" class="col-1" id="delete_item" src="/images/delete_item.png" name="clearItem"
+                value="<%=  album.id %>">
+            </form>
         </div>
-        <div id="cartItem" class="row">
-            <img class="col-2" id="album-cover" src="/images/albums/masseduction.jpg" alt="" />
-            <div id="title" class="col-3">
-                <h3>St. Vincent</h3>
-                <p>Masseduction</p>
-            </div>
-            <div id="containers" class="col-6">
-                <div id="formatos">
-                    <p>Vinilo</p>
-                </div>
-                <div id="cantidad">
-                    <p>Cantidad</p>
-                </div>
-                <div id="precio">
-                    <p>$650</p>
-                </div>
-            </div>
-            <img id="delete_item" class="col-1" src="/images/delete_item.png" alt="">
-        </div>
+        <% }) %>
         <div id="price">
             <hr>
             <h1 id="section">Total: $1.300.-</h1>
         </div>
     </div>
+
+
+
+
     <div id="action-buttons" class="row">
-        <button id="go-back" class="col-2">Seguir Comprando</button>
+        <button id="go-back" class="col-2" onclick="window.location.href='/'">Seguir Comprando</button>
         <button id="buy" class="col-2">Confirmar Compra</button>
     </div>
-    <%- include('partials/footer.ejs') %>
 
-    </html>
+    <%- include('partials/footer.ejs') %>
+</div>
+
+</html>

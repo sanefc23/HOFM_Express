@@ -25,14 +25,16 @@
                 <div id="price" class="info-mini-cards">
                     <label class="info">$<%= album.price%></label>
                 </div>
-                <div id="addToCart" class="info-mini-cards">
-                    <label class="info">
-                        <div style="display: inline-flex; justify-content: center; align-items: center;">
-                            <img class="addToCart-icon" src="/images/addToCart.png" alt="">
-                            <p style="margin: 0 auto; margin-top: 0.2em; margin-left: 0.2em">Añadir</p>
-                        </div>
-                    </label>
-                </div>
+                <form action="/products/<%= album.id %>" method="POST">
+                    <button id="addToCart" class="info-mini-cards" name="item" value="<%=  album.id %>">
+                        <label class="info">
+                            <div style="display: inline-flex; justify-content: center; align-items: center;">
+                                <img class="addToCart-icon" src="/images/addToCart.png" alt="">
+                                <p style="margin: 0 auto; margin-top: 0.2em; margin-left: 0.2em">Añadir</p>
+                            </div>
+                        </label>
+                    </button>
+                </form>
             </div>
 
             <div class="row">

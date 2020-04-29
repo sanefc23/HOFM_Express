@@ -110,6 +110,7 @@ const usersController = {
   logout: (req, res) => {
     req.session.destroy();
     res.cookie("userCookie", null, { maxAge: 1 });
+    res.cookie("userCart", null, { maxAge: 1 });
     res.redirect("/");
   },
 
