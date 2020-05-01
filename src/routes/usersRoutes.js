@@ -28,6 +28,13 @@ let registerValidations = [
     check('password').isLength({
         min: 6
     }).withMessage('La contraseña debe tener por lo menos 6 caracteres.'),
+    body('verification', 'Las contraseñas deben coincidir.').custom((value, { req }) => {
+        if (value !== req.body.password) {
+            return false;
+        } else {
+            return true;
+        }
+    })
 ];
 
 let loginValidations = [
