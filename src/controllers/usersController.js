@@ -21,16 +21,23 @@ const usersController = {
     } else {
       let encrytedPassword = bcrypt.hashSync(req.body.password, 10);
 
-      if (req.body.password == req.body.verification) {
-        Users.create({
-          ...req.body,
-          password: encrytedPassword,
+      Users.create({
+        ...req.body,
+        password: encrytedPassword,
+      })
+        .then((user) => {
+          Users.findAll({
+            where: {
+              email: req.body.email,
+            },
+          }).then((userToLog) => {
+            userToLog = userToLog[0];
+            req.session.loggedUser = userToLog;
+            res.cookie("userCookie", userToLog.id, { maxAge: 60000 * 100 });
+            return res.redirect('/');
+          })
         })
-          .then((user) => res.send("Usuario agregado!"))
-          .catch((error) => res.send(error));
-      } else {
-        res.send("Las contraseñas no coinciden.");
-      }
+        .catch((error) => res.send(error));
     }
   },
 
