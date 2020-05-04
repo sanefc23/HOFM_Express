@@ -1,0 +1,25 @@
+<%- include('partials/head.ejs') %>
+
+<div class="background">
+    <%- include('partials/nav-bar.ejs') %>
+    <div class="frame">
+        <% if (results.length == undefined) { %>
+        <h2>No encontramos lo que estás buscando.</h2>
+        <% }else{ %>
+        <h2 id="catalog-title">Encontramos estos albums:</h2>
+        <div class="catalog">
+            <% for (let i = 0; i < results.length; i++) { %>
+            <section class="product">
+                <a href="/products/<%= results[i].id%>">
+                    <img id="album-cover" src="<%= results[i].front_cover %>" alt="" />
+                </a>
+                <h5 id="artist"><%= results[i].artist.name %></h5>
+                <h5 id="album"><%= results[i].title %></h5>
+            </section>
+            <% } %>
+        </div>
+        <% } %>
+    </div>
+    <%- include('partials/footer.ejs') %>
+
+    </html>

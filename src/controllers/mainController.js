@@ -19,8 +19,6 @@ const mainController = {
 				res.render('homePage', {
 					customCss: '/css/homePage.css',
 					novedades: results[0],
-					// genres: results[1]
-					// tracklist: tracklist,
 				})
 			}).catch(error => res.send(error));
 	},

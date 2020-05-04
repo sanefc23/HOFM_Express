@@ -4,6 +4,7 @@ const Albums = db.albums;
 const Artists = db.artists;
 const Genres = db.genres;
 const Songs = db.songs;
+const Op = db.Sequelize.Op;
 
 const productsController = {
     renderAdd: (req, res) => {
@@ -54,6 +55,20 @@ const productsController = {
                     return res.redirect('/not-found');
                 }).catch(error => res.send(error));
             }).catch(error => res.send(error));
+    },
+
+    renderSearch: (req, res) => {
+        Albums.findAll({
+            where: {
+                title: { [Op.like]: `%${req.query.search}%` }
+            },
+            include: ['artist']
+        }).then(results => {
+            res.render('searchProducts', {
+                customCss: '/css/homePage.css',
+                results
+            });
+        }).catch(error => res.send(error));
     },
 
     // --- Complete Catalog View (Admin only) ---

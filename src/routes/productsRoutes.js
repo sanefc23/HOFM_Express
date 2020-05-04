@@ -3,6 +3,7 @@ const router = express.Router();
 const multer = require('multer');
 let path = require('path');
 
+
 const productsController = require('../controllers/productsController'); // Controller 
 const validateAdmin = require('../middlewares/validateAdmin'); // Admin Middleware
 const cart = require('../middlewares/cartMiddleware'); // Cart Cookie Middleware
@@ -30,7 +31,10 @@ router.post('/add', validateAdmin, upload.any('file'), productsController.store)
 
 // Show cart - GET
 router.get('/cart', productsController.renderCart);
-router.post
+// router.post
+
+// Show search results
+router.get('/results', productsController.renderSearch);
 
 // Show complete catalog - GET
 router.get('/all', validateAdmin, productsController.showAll);
