@@ -9,5 +9,4 @@ function clearCart(req, res, next) {
     next();
 }
 
-
 module.exports = clearCart;

@@ -14,7 +14,8 @@
 }
 
 .nav-item, .nav-link {
-    display: inline-flex;
+    display: flex;
+    flex-direction: row;
     color: white;
     margin-right: 1em;
 }
@@ -45,6 +46,14 @@
 
 .cart-logo, .user-logo {
     width: 4.5vw;
+}
+
+.cartCounterBadge {
+    border-radius: 50%;
+    width: 26px;
+    height: 26px;
+    background-color: rgba(0, 190, 159, 0.85);
+    /* background-color: rgba(255, 255, 255, 0.7); */
 }
 
 @media (min-width:992px) {

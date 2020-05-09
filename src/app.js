@@ -8,6 +8,7 @@ const methodOverride = require('method-override');
 const session = require('express-session');
 const genresMiddleware = require('./middlewares/genresInNavbar');
 const loggedUserMiddleware = require('./middlewares/loggedUserMiddleware');
+const cartCounterMiddleware = require('./middlewares/cartCounterMiddleware');
 
 //  express() - (don't touch) 
 const app = express();
@@ -24,6 +25,7 @@ app.use(methodOverride("_method"));
 app.use(session({ secret: "secret" }));
 app.use(genresMiddleware);
 app.use(loggedUserMiddleware);
+app.use(cartCounterMiddleware);
 
 //  Template Engine - (don't touch) 
 app.set('view engine', 'ejs');

@@ -5,7 +5,7 @@ function cart(req, res, next) {
     } else {
         let cartCookie = [];
         res.cookie('userCart', JSON.stringify(cartCookie), { maxAge: 60000 * 100 });
-        console.log('Cookie created successfully')
+        console.log('Cookie created successfully');
     }
     next();
 }

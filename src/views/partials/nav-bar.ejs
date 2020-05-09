@@ -46,6 +46,13 @@
             <li class="nav-item">
                 <a class="nav-link" href="/users/profile"><img class="user-logo" src="/images/user.png" alt=""></a>
             </li>
+            <% if (cartCounter != 0) { %>
+            <div class="cartCounterBadge">
+                <h6 style="font-size: 14px; text-align: center; margin-top: .35em; font-weight: bold;">
+                    <%= cartCounter %>
+                </h6>
+            </div>
+            <% } %>
             <li class="nav-item">
                 <a class="nav-link" href="/products/cart"><img class="cart-logo" src="/images/cart.png" alt=""></a>
             </li>
