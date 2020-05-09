@@ -1,65 +1,61 @@
 <%- include('partials/head.ejs') %>
 <div class="background">
-    <%- include('partials/nav-bar.ejs') %>
-    <div class="frame">
-        <div class="child-frame1">
-            <div>
-                <h1><%= album.title %></h1>
-                <h3><%= album.artist.name %></h3>
-                <h5>Género: <%= album.genre.name %></h5>
-                <p id="description">
-                    <%= album.description %>
-                </p>
-            </div>
-            <div class="row-mini-cards">
-                <div id="valoracion" class="info-mini-cards">
-                    <label class="info">
-                        <%for (let i = 0; i < album.rating; i++) {%>
-                        <i class="fas fa-star"></i>
-                        <%}%>
-                       </label>
-                </div>
-                <div id="formatos" style="text-transform: uppercase;" class="info-mini-cards">
-                    <label class="info"><%= album.format%></label>
-                </div>
-                <div id="price" class="info-mini-cards">
-                    <label class="info">$<%= album.price%></label>
-                </div>
-                <form action="/products/<%= album.id %>" method="POST">
-                    <button id="addToCart" class="info-mini-cards" name="item" value="<%=  album.id %>">
-                        <label class="info">
-                            <div style="display: inline-flex; justify-content: center; align-items: center;">
-                                <img class="addToCart-icon" src="/images/addToCart.png" alt="">
-                                <p style="margin: 0 auto; margin-top: 0.2em; margin-left: 0.2em">Añadir</p>
-                            </div>
-                        </label>
-                    </button>
-                </form>
-            </div>
-
-            <div class="row">
-                <div id="album-covers" class="col-12">
-                    <img class="col-6" src="<%= album.front_cover %>" alt="">
-                    <img class="col-6" src="<%= album.back_cover %>" alt="">
-                </div>
-            </div>
+  <%- include('partials/nav-bar.ejs') %>
+  <div class="frame">
+    <div class="child-frame1">
+      <div>
+        <h1><%= album.title %> - <%= album.artist.name %></h1>
+        <h5>Género: <%= album.genre.name %></h5>
+        <p id="description">
+          <%= album.description %>
+        </p>
+      </div>
+      <div class="row-mini-cards">
+        <div id="valoracion" class="info-mini-cards">
+          <label class="info">
+            <%for (let i = 0; i < album.rating; i++) {%>
+            <i class="fas fa-star"></i>
+            <%}%>
+          </label>
         </div>
-
-        <div class="child-frame2">
-
-            <ol class="tracklist">
-                <h3>Tracklist</h3>
-                <br>
-                <%if (tracklist.length != 0) { %>
-                <% for (let i = 0; i < tracklist.length; i++) { %>
-                <li><%= tracklist[i].name %></li>
-                <% } %>
-                <%} else { %>
-                <h5>No disponible</h5>
-                <% } %>
-            </ol>
+        <div id="formatos" style="text-transform: uppercase;" class="info-mini-cards">
+          <label class="info"><%= album.format%></label>
         </div>
+        <div id="price" class="info-mini-cards">
+          <label class="info">$<%= album.price%></label>
+        </div>
+        <form action="/products/<%= album.id %>" method="POST">
+          <button class="addToCartButton" name="item" value="<%=  album.id %>">
+            <label class="info">
+              <div style="display: inline-flex; justify-content: center; align-items: center;">
+                <img class="addToCart-icon" src="/images/addToCart.png" alt="">
+                <p style="margin: 0 auto; margin-left: 0.2em">Añadir</p>
+              </div>
+            </label>
+          </button>
+        </form>
+      </div>
+      <div class="row-mini-cards">
+        <img class="album-cover" src="<%= album.front_cover %>" alt="">
+        <img class="album-cover" src="<%= album.back_cover %>" alt="">
+      </div>
     </div>
-    <%- include('partials/footer.ejs') %>
 
-    </html>
+    <div class="child-frame2">
+
+      <ol class="tracklist">
+        <h3>Tracklist</h3>
+        <br>
+        <%if (tracklist.length != 0) { %>
+        <% for (let i = 0; i < tracklist.length; i++) { %>
+        <li><%= tracklist[i].name %></li>
+        <% } %>
+        <%} else { %>
+        <h5>No disponible</h5>
+        <% } %>
+      </ol>
+    </div>
+  </div>
+  <%- include('partials/footer.ejs') %>
+
+  </html>
