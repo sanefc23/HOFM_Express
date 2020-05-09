@@ -1,0 +1,18 @@
+  // footer
+  .footer {
+    width: 100vw;
+    background-color: $bkgTransparentDark;
+    color: $fontLight;
+    position: relative;
+    margin-bottom: 0em;
+    height: 7vh;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .footer-text {
+    font-size: 2vh;
+    margin: 0 auto;
+  }

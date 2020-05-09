@@ -1,3 +1,7 @@
+/* Background Colors */
+/* Button Colors */
+/* Font Colors */
+/* Font Family */
 * {
   padding: 0;
   box-sizing: border-box;
@@ -6,44 +10,24 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   letter-spacing: 1px;
 }
 
 .background {
   margin: 0;
-  background-image: url('/images/background.png');
+  letter-spacing: 1px;
   background-size: cover;
+  background-image: url("images/background.png");
   height: 100vh;
   overflow-x: hidden;
 }
 
-a:hover, a:visited {
+a:hover,
+a:visited {
   text-decoration: none;
   color: white;
 }
-
-/*--------FOOTER--------*/
-
-.footer {
-  width: 100vw;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: hsl(0, 0%, 100%);
-  position: relative;
-  margin-bottom: 0em;
-  height: 7vh;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.footer-text {
-  font-size: 2vh;
-  margin: 0 auto;
-}
-
-/*-- Error Messages --*/
 
 .errorFrame {
   height: 75%;
@@ -58,23 +42,11 @@ a:hover, a:visited {
   margin: 0 auto;
 }
 
-/*------------media-queries-----------*/
-
-@media (max-width:425px) {}
-
-@media (max-width:768px) {}
-
-@media (min-width:769px) {
+@media (min-width: 700px) {
   .footer {
-    width: 100vw;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
     position: absolute;
     bottom: 0;
-    height: 7vh;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
 }
+
+/*# sourceMappingURL=app.css.map */
