@@ -1,16 +1,159 @@
-/* Background Colors */
-/* Button Colors */
-/* Font Colors */
-/* Font Family */
+.footer {
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  position: relative;
+  margin-bottom: 0em;
+  height: 7vh;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-text {
+  font-size: 2vh;
+  margin: 0 auto;
+}
+
+@media (min-width: 700px) {
+  .footer {
+    position: absolute;
+    bottom: 0;
+  }
+}
+
+.wrapper {
+  display: inline-flex;
+  width: 100%;
+  flex-wrap: nowrap;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0em 0.5em;
+  justify-content: flex-start;
+  align-items: center;
+  overflow-y: auto;
+}
+
+.product {
+  margin: 0.5em;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+#title {
+  font-size: 5vw;
+  padding: 0.8em 0em 0em 0.7em;
+  font-weight: bold;
+}
+
+#catalog-title {
+  font-size: 5vw;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 1.4vh;
+}
+
+.catalog {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1.2em;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.album-cover {
+  width: 40vw;
+}
+
+.artist, .album {
+  font-size: 2vh;
+  margin: 2px;
+  width: 39vw;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.artist {
+  font-weight: bold;
+}
+
+#update {
+  background-color: rgba(247, 170, 3, 0.85);
+  color: white;
+  height: 4vh;
+  width: 40vw;
+  border: none;
+  border-radius: 2px;
+  margin-top: 0.2em;
+  margin-bottom: 0.2em;
+}
+
+#update:hover {
+  background-color: #fdd57f;
+}
+
+.delete {
+  background-color: rgba(230, 100, 100, 0.85);
+  color: white;
+  height: 4vh;
+  width: 40vw;
+  border: none;
+  border-radius: 2px;
+  margin-bottom: 2em;
+}
+
+.delete:hover {
+  background-color: #dd8c8c;
+}
+
+@media (min-width: 700px) {
+  #title {
+    font-size: 2.5vw;
+    padding: 0.6em 0em 0em 0.4em;
+  }
+  #catalog-title {
+    font-size: 2.5vw;
+    padding: 0.4em 0em 0em 0.7em;
+  }
+  .catalog {
+    margin: 0.4em;
+    justify-content: flex-center;
+  }
+  .product {
+    margin-right: 0.4em;
+  }
+  .album-cover {
+    width: 15vw;
+  }
+  .artist, .album {
+    width: 14vw;
+  }
+  .artist {
+    font-weight: bold;
+  }
+  #update {
+    width: 15vw;
+  }
+  .delete {
+    width: 15vw;
+  }
+}
+
 * {
   padding: 0;
   box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  color: white;
 }
 
 body {
   margin: 0;
   padding: 0;
-  font-family: "Montserrat", sans-serif;
+  color: white;
   letter-spacing: 1px;
 }
 
@@ -18,13 +161,12 @@ body {
   margin: 0;
   letter-spacing: 1px;
   background-size: cover;
-  background-image: url("images/background.png");
+  background-image: url("../images/background.png");
   height: 100vh;
   overflow-x: hidden;
 }
 
-a:hover,
-a:visited {
+a:hover, a:visited {
   text-decoration: none;
   color: white;
 }
@@ -40,13 +182,6 @@ a:visited {
 .errorMessage {
   color: white;
   margin: 0 auto;
-}
-
-@media (min-width: 700px) {
-  .footer {
-    position: absolute;
-    bottom: 0;
-  }
 }
 
 /*# sourceMappingURL=app.css.map */

@@ -1,3 +1,4 @@
+
 function userCookieMiddleware(req, res, next) {
 	res.locals.isLogged = false;
 

@@ -9,7 +9,7 @@ const session = require('express-session');
 const genresMiddleware = require('./middlewares/genresInNavbar');
 const loggedUserMiddleware = require('./middlewares/loggedUserMiddleware');
 const cartCounterMiddleware = require('./middlewares/cartCounterMiddleware');
-
+const isAdminUser = require('./middlewares/storeAdminMiddleware');
 //  express() - (don't touch) 
 const app = express();
 
@@ -26,6 +26,7 @@ app.use(session({ secret: "secret" }));
 app.use(genresMiddleware);
 app.use(loggedUserMiddleware);
 app.use(cartCounterMiddleware);
+app.use(isAdminUser);
 
 //  Template Engine - (don't touch) 
 app.set('view engine', 'ejs');

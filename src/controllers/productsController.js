@@ -89,7 +89,6 @@ const productsController = {
       })
       .then(allAlbums => {
         res.render('allProducts', {
-          customCss: '/css/homePage.css',
           allProducts: allAlbums
         });
       }).catch(error => res.send(error));
@@ -128,7 +127,7 @@ const productsController = {
   },
 
   //--- Process Edit Product (Admin only) ---
-  update: function(req, res) {
+  update: function (req, res) {
     Albums
       .update({
         ...req.body,

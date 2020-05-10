@@ -7,7 +7,6 @@ const Users = db.users;
 const usersController = {
   register: (req, res) => {
     res.render("register", {
-      customCss: "/css/register.css",
     });
   },
 
@@ -15,7 +14,6 @@ const usersController = {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       return res.render("register", {
-        customCss: "/css/register.css",
         registerErrors: errors.errors,
       });
     } else {
@@ -44,14 +42,11 @@ const usersController = {
   // *** USER LOGIN ***
 
   userLogin: (req, res) => {
-    res.render("loginPage", {
-      customCss: "/css/loginPage.css",
-    });
+    res.render("loginPage");
   },
 
   processLogin: (req, res) => {
     /* Valida email y contraseña encriptada */
-
     let errors = validationResult(req);
 
     if (errors.isEmpty()) {
@@ -65,7 +60,6 @@ const usersController = {
 
           if (userToLog == undefined) {
             return res.render("loginPage", {
-              customCss: "/css/loginPage.css",
               registerErrors: [
                 { msg: "Alguno de los datos que ingresaste no es correcto." },
               ],
@@ -79,7 +73,6 @@ const usersController = {
               return res.redirect("/");
             } else {
               return res.render("loginPage", {
-                customCss: "/css/loginPage.css",
                 registerErrors: [{ msg: "Alguno de los datos es incorrecto." }],
               });
             }
@@ -105,9 +98,7 @@ const usersController = {
     Users.findByPk(req.session.userId)
       .then((userLogged) => {
         console.log(userLogged);
-
         res.render("userProfile", {
-          customCss: "/css/userProfile.css",
           user: userLogged,
         });
       })
@@ -127,7 +118,6 @@ const usersController = {
     // let userToEdit = users[idUser];
     // console.log(userToEdit);
     // res.render('editUser', {
-    //     customCss: '/css/editUser.css',
     //     userToEdit: userToEdit,
     // });
   },

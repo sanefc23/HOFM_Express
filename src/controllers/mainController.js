@@ -17,7 +17,6 @@ const mainController = {
 			.all([albums, genres])
 			.then(results => {
 				res.render('homePage', {
-					customCss: '/css/homePage.css',
 					novedades: results[0],
 				})
 			}).catch(error => res.send(error));

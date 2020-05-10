@@ -11,8 +11,15 @@
     align-items: center;
     justify-content: center;
   }
-  
+
   .footer-text {
     font-size: 2vh;
     margin: 0 auto;
+  }
+
+  @media (min-width:700px) {
+    .footer {
+      position: absolute;
+      bottom: 0;
+    }
   }

@@ -8,7 +8,7 @@ const productsController = require('../controllers/productsController'); // Cont
 const validateAdmin = require('../middlewares/validateAdmin'); // Admin Middleware
 const cart = require('../middlewares/cartMiddleware'); // Cart Cookie Middleware
 const clearCart = require('../middlewares/clearCartMiddleware'); // Clear Cart Middleware
-
+const mustLogin = require('../middlewares/authMiddleware');
 // Multer implementation
 var storage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -52,7 +52,7 @@ router.delete('/all/delete/:id', validateAdmin, productsController.destroy);
 router.get('/:id', cart, productsController.renderDetail);
 
 // Show product detail - POST
-router.post('/:id', cart, productsController.addToCartDetail);
+router.post('/:id', [mustLogin, cart], productsController.addToCartDetail);
 
 
 module.exports = router;

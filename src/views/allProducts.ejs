@@ -8,7 +8,7 @@
             <% for (let i = 0; i < allProducts.length; i++) { %>
             <section class="product">
                 <a href="/products/<%= allProducts[i].id%>">
-                    <img id="album-cover" src="<%= allProducts[i].front_cover %>" alt="" />
+                    <img class="album-cover" src="<%= allProducts[i].front_cover %>" alt="" />
                 </a>
                 <h5 id="artist"><%= allProducts[i].artist.name %></h5>
                 <h5 id="album"><%= allProducts[i].title %></h5>
