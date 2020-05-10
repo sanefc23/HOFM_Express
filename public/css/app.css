@@ -22,7 +22,6 @@
     bottom: 0;
   }
 }
-
 .wrapper {
   display: inline-flex;
   width: 100%;
@@ -68,7 +67,8 @@
   width: 40vw;
 }
 
-.artist, .album {
+.artist,
+.album {
   font-size: 2vh;
   margin: 2px;
   width: 39vw;
@@ -94,6 +94,7 @@
 
 #update:hover {
   background-color: #fdd57f;
+  color: #484848;
 }
 
 .delete {
@@ -108,6 +109,7 @@
 
 .delete:hover {
   background-color: #dd8c8c;
+  color: #484848;
 }
 
 @media (min-width: 700px) {
@@ -115,31 +117,140 @@
     font-size: 2.5vw;
     padding: 0.6em 0em 0em 0.4em;
   }
+
   #catalog-title {
     font-size: 2.5vw;
     padding: 0.4em 0em 0em 0.7em;
   }
+
   .catalog {
     margin: 0.4em;
     justify-content: flex-center;
   }
+
   .product {
     margin-right: 0.4em;
   }
+
   .album-cover {
     width: 15vw;
   }
-  .artist, .album {
+
+  .artist,
+.album {
     width: 14vw;
   }
+
   .artist {
     font-weight: bold;
   }
+
   #update {
     width: 15vw;
   }
+
   .delete {
     width: 15vw;
+  }
+}
+.loginPage {
+  color: #484848;
+}
+.loginPage .frame {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4vh;
+}
+.loginPage #login-title {
+  font-size: 2.5vh;
+  margin-top: 0;
+}
+.loginPage .errors {
+  color: #e66464;
+  font-size: 2vh;
+  font-weight: 700;
+}
+.loginPage #login {
+  background-color: rgba(0, 190, 159, 0.85);
+}
+.loginPage #recover-password {
+  background-color: rgba(230, 100, 100, 0.85);
+}
+.loginPage #login:hover {
+  background-color: #00be9e;
+}
+.loginPage #recover-password:hover {
+  background-color: #e66464;
+}
+@media (max-width: 768px) {
+  .loginPage .register-image {
+    display: none;
+  }
+  .loginPage .register-form {
+    width: 90vh;
+  }
+  .loginPage .text-box {
+    height: 4.5vh;
+    width: 70vw;
+  }
+  .loginPage #login,
+.loginPage #register {
+    font-size: 2vw;
+    width: 40vw;
+  }
+}
+@media (min-width: 769px) {
+  .loginPage .register-image {
+    width: 32vw;
+    border-radius: 20px 20px 0px 0px;
+  }
+  .loginPage .register-form {
+    background-color: rgba(255, 255, 255, 0.7);
+    height: 40vh;
+    width: 32vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .loginPage .form-frame {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .loginPage .input-hint {
+    display: inline-block;
+    font-size: 1vw;
+    padding-bottom: 0.5vh;
+    font-weight: normal;
+  }
+  .loginPage .text-box {
+    height: 4.5vh;
+    width: 20vw;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 0.8vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 1.2em;
+  }
+  .loginPage #action-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .loginPage #login,
+.loginPage #recover-password {
+    color: white;
+    font-size: 2vh;
+    border: none;
+    height: 6vh;
+    width: 16vw;
+    border-radius: 0px 0px 20px 20px;
   }
 }
 
@@ -166,7 +277,8 @@ body {
   overflow-x: hidden;
 }
 
-a:hover, a:visited {
+a:hover,
+a:visited {
   text-decoration: none;
   color: white;
 }

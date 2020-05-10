@@ -6,8 +6,7 @@ const Users = db.users;
 
 const usersController = {
   register: (req, res) => {
-    res.render("register", {
-    });
+    res.render("register");
   },
 
   createUser: (req, res) => {
@@ -57,11 +56,10 @@ const usersController = {
       })
         .then((userToLog) => {
           userToLog = userToLog[0];
-
           if (userToLog == undefined) {
             return res.render("loginPage", {
               registerErrors: [
-                { msg: "Alguno de los datos que ingresaste no es correcto." },
+                { msg: "Mail incorrecto." },
               ],
             });
           } else {
@@ -73,7 +71,7 @@ const usersController = {
               return res.redirect("/");
             } else {
               return res.render("loginPage", {
-                registerErrors: [{ msg: "Alguno de los datos es incorrecto." }],
+                registerErrors: [{ msg: "Contraseña incorrecta." }],
               });
             }
           }
@@ -82,22 +80,12 @@ const usersController = {
     }
   },
 
-  // Check logged user
-  check: (req, res) => {
-    if (res.locals.isLogged) {
-      return res.send(
-        `El usuario loggeado es: ${req.session.loggedUser.email}`
-      );
-    } else {
-      return res.send("No estás loggeado");
-    }
-  },
-
   //  User's profile
   userProfile: (req, res) => {
     Users.findByPk(req.session.userId)
       .then((userLogged) => {
         console.log(userLogged);
+
         res.render("userProfile", {
           user: userLogged,
         });
@@ -118,6 +106,7 @@ const usersController = {
     // let userToEdit = users[idUser];
     // console.log(userToEdit);
     // res.render('editUser', {
+    //     customCss: '/css/editUser.css',
     //     userToEdit: userToEdit,
     // });
   },

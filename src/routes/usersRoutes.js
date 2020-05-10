@@ -65,8 +65,5 @@ router.get("/profile", authMiddleware, usersController.userProfile);
 // Logout
 router.get('/logout', authMiddleware, usersController.logout);
 
-// Verify user's session
-router.get("/checkLogin", usersController.check);
-
 module.exports = router;
 

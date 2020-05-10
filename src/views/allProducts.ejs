@@ -10,8 +10,8 @@
                 <a href="/products/<%= allProducts[i].id%>">
                     <img class="album-cover" src="<%= allProducts[i].front_cover %>" alt="" />
                 </a>
-                <h5 id="artist"><%= allProducts[i].artist.name %></h5>
-                <h5 id="album"><%= allProducts[i].title %></h5>
+                <h5 class="artist"><%= allProducts[i].artist.name %></h5>
+                <h5 class="album"><%= allProducts[i].title %></h5>
                 <a href=/products/all/edit/<%= allProducts[i].id %>><button id="update">Editar</button></a>
                 <form class="delete-product" action="/products/all/delete/<%= allProducts[i].id %>?_method=DELETE"
                     method="POST">

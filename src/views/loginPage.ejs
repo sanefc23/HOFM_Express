@@ -2,33 +2,32 @@
 <div class="background">
     <%- include('partials/nav-bar.ejs') %>
     <form action="/users/login" method="POST">
-        <div class="frame">
-
-            <img class="register-image" src="/images/concert-login.jpg" alt="">
-            <div class="register-form">
-                <h4 id="login-title">Ingresá tu datos</h4>
-                <div class="form-frame">
-                    <label class="input-hint">Email</label>
-                    <input class="text-box" type="email" name="email">
-                    <label class="input-hint">Contraseña</label>
-                    <input class="text-box" type="password" name="password">
+        <div class="loginPage frame">
+            <img class="loginPage register-image" src="/images/concert-login.jpg" alt="">
+            <div class="loginPage register-form">
+                <h4 id="loginPage login-title">Ingresá tu datos</h4>
+                <div class="loginPage form-frame">
+                    <label class="loginPage input-hint">Email</label>
+                    <input class="loginPage text-box" type="email" name="email">
+                    <label class="loginPage input-hint">Contraseña</label>
+                    <input class="loginPage text-box" type="password" name="password">
                     <div>
                         <label>Recordarme</label>
-                        <input type="checkbox" name="rememberMe">
+                        <input class="loginPage" type="checkbox" name="rememberMe">
                     </div>
                 </div>
 
                 <% if (typeof registerErrors != 'undefined'){ %>
                 <ul>
                     <% for (let i = 0; i < registerErrors.length; i++) {%>
-                    <li class="errors"><%= registerErrors[i].msg %> </li>
+                    <li class="loginPage errors"><%= registerErrors[i].msg %> </li>
                     <% }; %>
                 </ul>
                 <% } %>
             </div>
-            <div id="action-buttons" class="row">
-                <button id="recover-password">Olvidé mi contraseña</button>
-                <button id="login" type="submit">Ingresar</button>
+            <div id="loginPage action-buttons" class="row">
+                <button id="loginPage recover-password">Olvidé mi contraseña</button>
+                <button id="loginPage login" type="submit">Ingresar</button>
             </div>
         </div>
     </form>
