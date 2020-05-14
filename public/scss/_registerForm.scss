@@ -1,24 +1,14 @@
-body {
-    color: #484848;
-}
-
-.frame {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+@import 'variables';
 
 .register-form {
     display: flex;
     flex-direction: column;
-    margin: 1em;
     width: 90vw;
+    color: $fontDark;
 }
 
-.form-frame {
-    background-color: rgba(255, 255, 255, 0.7);
+.registerForm-frame {
+    background-color: $bkgTransparentLight;
     border-radius: 10px 10px 0px 0px;
     display: flex;
     flex-direction: column;
@@ -34,7 +24,7 @@ body {
 .text-box {
     border: none;
     padding: 0;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: $bkgTransparentLight;
     border-radius: 0.8vh;
     height: 4.5vh;
     display: flex;
@@ -45,12 +35,6 @@ body {
     text-align: center;
     font-size: 1.5vh;
     width: 80%;
-}
-
-.errors {
-    color: rgb(230, 100, 100);
-    font-size: 2vh;
-    font-weight: 700;
 }
 
 #register-btn {
@@ -70,9 +54,11 @@ body {
     .register-form {
         width: 70vw;
     }
+
     .text-box {
         width: 60vw;
     }
+
     #register-btn {
         width: 70vw;
     }
@@ -82,9 +68,11 @@ body {
     .register-form {
         width: 45vw;
     }
+
     .text-box {
         width: 35vw;
     }
+
     #register-btn {
         width: 45vw;
         margin: 0 auto;

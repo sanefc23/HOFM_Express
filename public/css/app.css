@@ -155,27 +155,23 @@
     width: 15vw;
   }
 }
-.loginPage {
-  color: #484848;
-}
-
 .frame {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 2vh;
+  margin-top: 1em;
 }
 
-.register-image {
+.login-image {
   width: 90vw;
   border-radius: 20px 20px 0px 0px;
 }
 
-.register-form {
+.login-form {
   background-color: rgba(255, 255, 255, 0.7);
-  height: 40vh;
+  height: 36vh;
   width: 90vw;
   display: flex;
   flex-direction: column;
@@ -190,7 +186,7 @@
   font-weight: normal;
 }
 
-.text-box {
+.login-text-box {
   height: 4.5vh;
   width: 80vw;
   border: none;
@@ -248,13 +244,13 @@
 }
 
 @media (min-width: 700px) {
-  .register-image {
-    width: 40vw;
+  .login-image {
+    width: 30vw;
   }
 
-  .register-form {
+  .login-form {
     height: 40vh;
-    width: 40vw;
+    width: 30vw;
   }
 
   .form-frame {
@@ -263,13 +259,13 @@
     align-items: flex-start;
   }
 
-  .text-box {
+  .login-text-box {
     width: 20vw;
   }
 
   .login,
 .recover-password {
-    width: 20vw;
+    width: 15vw;
   }
 
   .action-buttons {
@@ -495,11 +491,92 @@ h5 {
     width: 27vw;
   }
 }
+.register-form {
+  display: flex;
+  flex-direction: column;
+  width: 90vw;
+  color: #484848;
+}
+
+.registerForm-frame {
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 10px 10px 0px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2vh;
+}
+
+.input-hint {
+  font-weight: normal;
+  margin: 0;
+}
+
+.text-box {
+  border: none;
+  padding: 0;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 0.8vh;
+  height: 4.5vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2vh;
+  text-align: center;
+  font-size: 1.5vh;
+  width: 80%;
+}
+
+#register-btn {
+  background-color: rgba(0, 190, 159, 0.85);
+  border: none;
+  color: white;
+  height: 6vh;
+  border-radius: 0px 0px 10px 10px;
+}
+
+#register-btn:hover {
+  background-color: #00be9e;
+  border: none;
+}
+
+@media (min-width: 426px) {
+  .register-form {
+    width: 70vw;
+  }
+
+  .text-box {
+    width: 60vw;
+  }
+
+  #register-btn {
+    width: 70vw;
+  }
+}
+@media (min-width: 700px) {
+  .register-form {
+    width: 45vw;
+  }
+
+  .text-box {
+    width: 35vw;
+  }
+
+  #register-btn {
+    width: 45vw;
+    margin: 0 auto;
+  }
+}
 * {
   padding: 0;
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
   color: white;
+}
+
+.darkFont {
+  color: #484848;
 }
 
 body {

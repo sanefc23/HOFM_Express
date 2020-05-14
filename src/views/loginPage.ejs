@@ -2,30 +2,30 @@
 <div class="background">
     <%- include('partials/nav-bar.ejs') %>
     <form action="/users/login" method="POST">
-        <div class="loginPage frame">
-            <img class="loginPage register-image" src="/images/concert-login.jpg" alt="">
-            <div class="loginPage register-form">
-                <h4 class="loginPage login-title">Ingresá tu datos</h4>
-                <div class="loginPage form-frame">
-                    <label class="loginPage input-hint">Email</label>
-                    <input class="loginPage text-box" type="email" name="email">
-                    <label class="loginPage input-hint">Contraseña</label>
-                    <input class="loginPage text-box" type="password" name="password">
+        <div class="darkFont frame">
+            <img class="darkFont login-image" src="/images/concert-login.jpg" alt="">
+            <div class="darkFont login-form">
+                <h4 class="darkFont login-title">Ingresá tu datos</h4>
+                <div class="darkFont form-frame">
+                    <label class="darkFont input-hint">Email</label>
+                    <input class="darkFont login-text-box" type="email" name="email">
+                    <label class="darkFont input-hint">Contraseña</label>
+                    <input class="darkFont login-text-box" type="password" name="password">
                     <div>
-                        <label class="loginPage input-hint">Recordarme</label>
-                        <input class="loginPage" type="checkbox" name="rememberMe" checked>
+                        <label class="darkFont input-hint">Recordarme</label>
+                        <input class="darkFont" type="checkbox" name="rememberMe" checked>
                     </div>
                 </div>
 
                 <% if (typeof registerErrors != 'undefined'){ %>
                 <ul>
                     <% for (let i = 0; i < registerErrors.length; i++) {%>
-                    <li class="loginPage errors"><%= registerErrors[i].msg %> </li>
+                    <li class="errors"><%= registerErrors[i].msg %> </li>
                     <% }; %>
                 </ul>
                 <% } %>
             </div>
-            <div id="loginPage action-buttons" class="row">
+            <div id="action-buttons" class="row">
                 <button class="recover-password">Olvidé mi contraseña</button>
                 <button class="login" type="submit">Ingresar</button>
             </div>

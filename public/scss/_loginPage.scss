@@ -1,26 +1,22 @@
 @import 'variables';
 
-.loginPage {
-    color: $fontDark;
-}
-
 .frame {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 2vh;
+    margin-top: 1em;
 }
 
-.register-image {
+.login-image {
     width: 90vw;
     border-radius: 20px 20px 0px 0px;
 }
 
-.register-form {
+.login-form {
     background-color: $bkgTransparentLight;
-    height: 40vh;
+    height: 36vh;
     width: 90vw;
     display: flex;
     flex-direction: column;
@@ -35,7 +31,7 @@
     font-weight: normal;
 }
 
-.text-box {
+.login-text-box {
     height: 4.5vh;
     width: 80vw;
     border: none;
@@ -93,13 +89,13 @@
 }
 
 @media(min-width: 700px) {
-    .register-image {
-        width: 40vw;
+    .login-image {
+        width: 30vw;
     }
 
-    .register-form {
+    .login-form {
         height: 40vh;
-        width: 40vw;
+        width: 30vw;
     }
 
     .form-frame {
@@ -108,13 +104,13 @@
         align-items: flex-start;
     }
 
-    .text-box {
+    .login-text-box {
         width: 20vw;
     }
 
     .login,
     .recover-password {
-        width: 20vw;
+        width: 15vw;
     }
 
     .action-buttons {

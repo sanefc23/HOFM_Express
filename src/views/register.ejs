@@ -2,25 +2,25 @@
 <div class="background">
     <%- include('partials/nav-bar.ejs') %>
     <form action="/users/register" method="POST">
-        <div class="frame">
-            <div class="register-form">
-                <div class="form-frame">
+        <div class="frame" style="margin-bottom: 5em;">
+            <div class="darkFont register-form">
+                <div class="darkFont registerForm-frame">
 
-                    <h3>Ingresá tus datos</h3>
-                    <label class="input-hint">Nombre</label>
-                    <input class="text-box" type="text" name="name">
-                    <label class="input-hint">Apellido</label>
-                    <input class="text-box" type="text" name="lastName">
-                    <label class="input-hint">Fecha de Nacimiento</label>
-                    <input class="text-box" type="date" name="birthdate">
-                    <label class="input-hint">Domicilio Postal</label>
-                    <input class="text-box" type="text" name="adress">
-                    <label class="input-hint">Email</label>
-                    <input class="text-box" type="email" name="email">
-                    <label class="input-hint">Contraseña</label>
-                    <input class="text-box" type="password" name="password">
-                    <label class="input-hint">Confirmar Contraseña</label>
-                    <input class="text-box" type="password" name="verification">
+                    <h3 class="darkFont" style="font-weight: bold;">Ingresá tus datos</h3>
+                    <label class="input-hint darkFont">Nombre</label>
+                    <input class="text-box darkFont" type="text" name="name">
+                    <label class="input-hint darkFont">Apellido</label>
+                    <input class="text-box darkFont" type="text" name="lastName">
+                    <label class="input-hint darkFont">Fecha de Nacimiento</label>
+                    <input class="text-box darkFont" type="date" name="birthdate">
+                    <label class="input-hint darkFont">Domicilio Postal</label>
+                    <input class="text-box darkFont" type="text" name="adress">
+                    <label class="input-hint darkFont">Email</label>
+                    <input class="text-box darkFont" type="email" name="email">
+                    <label class="input-hint darkFont">Contraseña</label>
+                    <input class="text-box darkFont" type="password" name="password">
+                    <label class="input-hint darkFont">Confirmar Contraseña</label>
+                    <input class="text-box darkFont" type="password" name="verification">
 
                     <% if (typeof registerErrors != 'undefined'){ %>
                     <ul>

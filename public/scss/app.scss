@@ -4,12 +4,17 @@
 @import 'loginPage';
 @import 'navbar';
 @import 'productDetail';
+@import 'registerForm';
 
 * {
   padding: 0;
   box-sizing: border-box;
   font-family: $mainFont;
   color: $fontLight;
+}
+
+.darkFont {
+  color: $fontDark;
 }
 
 body {
