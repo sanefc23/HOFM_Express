@@ -5,15 +5,15 @@
         <div class="loginPage frame">
             <img class="loginPage register-image" src="/images/concert-login.jpg" alt="">
             <div class="loginPage register-form">
-                <h4 id="loginPage login-title">Ingresá tu datos</h4>
+                <h4 class="loginPage login-title">Ingresá tu datos</h4>
                 <div class="loginPage form-frame">
                     <label class="loginPage input-hint">Email</label>
                     <input class="loginPage text-box" type="email" name="email">
                     <label class="loginPage input-hint">Contraseña</label>
                     <input class="loginPage text-box" type="password" name="password">
                     <div>
-                        <label>Recordarme</label>
-                        <input class="loginPage" type="checkbox" name="rememberMe">
+                        <label class="loginPage input-hint">Recordarme</label>
+                        <input class="loginPage" type="checkbox" name="rememberMe" checked>
                     </div>
                 </div>
 
@@ -26,8 +26,8 @@
                 <% } %>
             </div>
             <div id="loginPage action-buttons" class="row">
-                <button id="loginPage recover-password">Olvidé mi contraseña</button>
-                <button id="loginPage login" type="submit">Ingresar</button>
+                <button class="recover-password">Olvidé mi contraseña</button>
+                <button class="login" type="submit">Ingresar</button>
             </div>
         </div>
     </form>

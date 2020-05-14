@@ -1,50 +1,49 @@
 <%- include('partials/head.ejs') %>
 <div class="background">
   <%- include('partials/nav-bar.ejs') %>
-  <div class="frame">
-    <div class="child-frame1">
+  <div class="detail-frame" style="margin-bottom: 5em;">
+    <div class="detail-child-frame1">
       <div>
-        <h1><%= album.title %> - <%= album.artist.name %></h1>
+        <h1 class="detail-title"><%= album.title %> - <%= album.artist.name %></h1>
         <h5>Género: <%= album.genre.name %></h5>
-        <p id="description">
+        <p class="detail-description">
           <%= album.description %>
         </p>
       </div>
-      <div class="row-mini-cards">
-        <div id="valoracion" class="info-mini-cards">
-          <label class="info">
+      <div class="detail-row-mini-cards">
+        <div id="valoracion" class="detail-info-mini-cards">
+          <label class="detail-info">
             <%for (let i = 0; i < album.rating; i++) {%>
             <i class="fas fa-star"></i>
             <%}%>
           </label>
         </div>
-        <div id="formatos" style="text-transform: uppercase;" class="info-mini-cards">
-          <label class="info"><%= album.format%></label>
+        <div id="formatos" style="text-transform: uppercase;" class="detail-info-mini-cards">
+          <label class="detail-info"><%= album.format%></label>
         </div>
-        <div id="price" class="info-mini-cards">
-          <label class="info">$<%= album.price%></label>
+        <div id="price" class="detail-info-mini-cards">
+          <label class="detail-info">$<%= album.price%></label>
         </div>
         <form action="/products/<%= album.id %>" method="POST">
-          <button class="addToCartButton" name="item" value="<%=  album.id %>">
-            <label class="info">
+          <button class="detail-addToCartButton" name="item" value="<%=  album.id %>">
+            <label class="detail-info">
               <div style="display: inline-flex; justify-content: center; align-items: center;">
-                <img class="addToCart-icon" src="/images/addToCart.png" alt="">
-                <p style="margin: 0 auto; margin-left: 0.2em">Añadir</p>
+                <img class="detail-addToCart-icon" src="/images/addToCart.png" alt="">
+                <p class="detail-info" style="margin: 0 auto; margin-left: 0.2em">Añadir</p>
               </div>
             </label>
           </button>
         </form>
       </div>
-      <div class="row-mini-cards">
-        <img class="album-cover" src="<%= album.front_cover %>" alt="">
-        <img class="album-cover" src="<%= album.back_cover %>" alt="">
+      <div class="detail-row-mini-cards">
+        <img class="detail-album-cover" src="<%= album.front_cover %>" alt="">
+        <img class="detail-album-cover" src="<%= album.back_cover %>" alt="">
       </div>
     </div>
 
-    <div class="child-frame2">
-
-      <ol class="tracklist">
-        <h3>Tracklist</h3>
+    <div class="detail-child-frame2">
+      <ol class="detail-tracklist">
+        <h3 class="detail-title">Tracklist</h3>
         <br>
         <%if (tracklist.length != 0) { %>
         <% for (let i = 0; i < tracklist.length; i++) { %>

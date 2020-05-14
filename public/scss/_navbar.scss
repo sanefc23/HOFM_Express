@@ -1,9 +1,11 @@
+@import 'variables';
+
 /*---------Navbar-------*/
 
 .navbar {
     width: 100vw;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
+    background-color: $bkgTransparentDark;
+    color: $fontLight;
     height: 6vh;
     font-family: 'Montserrat', sans-serif;
 }
@@ -13,21 +15,22 @@
     margin: 0 auto;
 }
 
-.nav-item, .nav-link {
+.nav-item,
+.nav-link {
     display: flex;
     flex-direction: row;
-    color: white;
+    color: $fontLight;
     margin-right: 1em;
 }
 
 .nav-link:hover {
     color: black;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: $bkgTransparentLight;
     border-radius: 5px;
 }
 
 .navbar-collapse {
-    background-color: rgba(0, 0, 0);
+    background-color: $bkgTransparentDark;
 }
 
 .dropdown {
@@ -41,10 +44,11 @@
 }
 
 .fa-bars {
-    color: white;
+    color: fontLight;
 }
 
-.cart-logo, .user-logo {
+.cart-logo,
+.user-logo {
     width: 4.5vw;
 }
 
@@ -52,21 +56,24 @@
     border-radius: 50%;
     width: 26px;
     height: 26px;
-    background-color: rgba(0, 190, 159, 0.85);
-    /* background-color: rgba(255, 255, 255, 0.7); */
+    background-color: $bkgTransparentOk;
 }
 
 @media (min-width:992px) {
     .navbar {
         height: 7vh;
     }
+
     .logo {
         height: 6vh;
         margin: 0 auto;
     }
-    .cart-logo, .user-logo {
+
+    .cart-logo,
+    .user-logo {
         width: 2.4vw;
     }
+
     .navbar-collapse {
         background-color: transparent;
     }
