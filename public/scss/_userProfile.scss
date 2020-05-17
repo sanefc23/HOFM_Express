@@ -1,0 +1,56 @@
+.user-card {
+    background-color: $bkgTransparentLight;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 95vw;
+    height: 50vh;
+}
+
+#action-buttons {
+    display: inline-flex;
+    margin: 0 auto;
+    margin-bottom: 12em;
+}
+
+#editprofile-btn,
+#logout-btn {
+    color: $fontLight;
+    font-size: 2vh;
+    border: none;
+    height: 6vh;
+    width: 40vw;
+    border-radius: 0px 0px 20px 20px;
+}
+
+#editprofile-btn {
+    background-color: $bkgTransparentUpdate;
+}
+
+#logout-btn {
+    background-color: $bkgTransparentDelete;
+}
+
+#editprofile-btn:hover {
+    background-color: $bkgTransparentUpdateHover;
+}
+
+#logout-btn:hover {
+    background-color: $bkgTransparentDeleteHover;
+}
+
+@media(min-width: 700px) {
+    .user-card {
+        width: 40vw;
+        height: 55vh;
+    }
+
+    #editprofile-btn,
+    #logout-btn {
+        font-size: 2vh;
+        height: 6vh;
+        width: 16vw;
+    }
+}
