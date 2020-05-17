@@ -2,46 +2,43 @@
 <div class="background">
     <%- include('partials/nav-bar.ejs') %>
 
-    <div id="frame" class="col-8">
+    <div class="cartFrame" class="col-8">
         <h3 id="section">Tus productos</h3>
         <% let total = 0 %>
         <% albums.forEach(album => { %>
         <% total = total + album.price %>
-        <div id="cartItem" class="row">
-            <img class="col-2" id="album-cover" src="<%= album.front_cover%>" alt="" />
-            <div id="title" class="col-3">
-                <h5><%= album.artist.name %></h5>
-                <p><%= album.title %></p>
+        <div class="cartItem">
+            <img class="cartItemCover" src="<%= album.front_cover%>" alt="" />
+            <div class="cartItemTitle">
+                <p class="itemTitle darkFont"><%= album.artist.name %></p>
+                <p class="itemTitle darkFont"><%= album.title %></p>
             </div>
-            <div id="containers" class="col-6">
-                <div id="formatos">
-                    <p class="containers-text" style="text-transform: uppercase;"><%= album.format %></p>
+            <div class="containers">
+                <div id="cart-format">
+                    <p class="containers-text darkFont" style="text-transform: uppercase;"><%= album.format %></p>
                 </div>
-                <div id="cantidad">
-                    <p class="containers-text">Cantidad</p>
+                <div id="cart-units">
+                    <p class="containers-text darkFont">Cantidad</p>
                 </div>
-                <div id="precio">
-                    <p class="containers-text">$ <%= album.price %></p>
+                <div id="cart-price">
+                    <p class="containers-text darkFont">$ <%= album.price %></p>
                 </div>
+                <form action="/products/carrito" method="POST"></form>
+                <input type="image" class="delete_item" src="/images/delete_item.png" name="clearItem"
+                    value="<%=  album.id %>">
+                </form>
             </div>
-            <form action="/products/carrito" method="POST"></form>
-            <input type="image" class="col-1" id="delete_item" src="/images/delete_item.png" name="clearItem"
-                value="<%=  album.id %>">
-            </form>
         </div>
         <% }) %>
-        <div id="price">
+        <div id="cart-total">
             <hr>
-            <h1 id="section">Total: $ <%= total%>.-</h1>
+            <h3 id="section">Total: $ <%= total%>.-</h3>
         </div>
     </div>
 
-
-
-
-    <div id="action-buttons" class="row">
-        <button id="go-back" class="col-2" onclick="window.location.href='/'">Seguir Comprando</button>
-        <button id="buy" class="col-2">Confirmar Compra</button>
+    <div class="action-buttons">
+        <button class="go-back" onclick="window.location.href='/'">Seguir Comprando</button>
+        <button class="buy">Confirmar Compra</button>
     </div>
 
     <%- include('partials/footer.ejs') %>
