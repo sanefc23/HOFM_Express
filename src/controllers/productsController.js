@@ -26,8 +26,8 @@ const productsController = {
           artists: results[0],
           genres: results[1],
           // tracklist: tracklist,
-        }).catch(error => res.send(error))
-      });
+        })
+      }).catch(error => res.send(error));
   },
 
   store: (req, res, next) => {

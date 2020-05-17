@@ -1,0 +1,202 @@
+@import 'variables';
+
+.add-frame {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 1em;
+}
+
+.input-cover-frame {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.input-frontcover-card,
+.input-backcover-card {
+    background-color: $bkgTransparentLight;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    height: 20vh;
+    width: 100%;
+    margin: 0.5em;
+}
+
+#add-album-icon {
+    width: 10vw;
+    margin: 0.5em;
+}
+
+.add-cover-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2vh;
+    margin-top: 1vh;
+    margin-bottom: .3vh;
+}
+
+.input-info-card,
+.input-tracklist-card {
+    background-color: $bkgTransparentLight;
+    border-radius: 15px;
+    padding: 1.5em;
+    margin: 0.5em;
+}
+
+.input-frame {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-frontcover-card>input,
+.input-backcover-card>input {
+    display: none;
+}
+
+.add-text-box,
+.textarea-box,
+.add-track-text-box {
+    border: none;
+    padding: 0;
+    background-color: $bkgTransparentLight;
+    border-radius: 0.8vh;
+    height: 4.5vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2vh;
+    text-align: center;
+    font-size: 1.5vh;
+}
+
+.add-text-box,
+option {
+    font-size: 2vh;
+    color: $fontDark;
+    font-family: $mainFont;
+}
+
+.add-track-text-box {
+    width: 50vw;
+}
+
+.textarea-box {
+    height: 12vh;
+    padding: .5em;
+}
+
+.formats {
+    display: inline-flex;
+    justify-content: space-between;
+}
+
+.price-box,
+.info-box {
+    width: 30%;
+    height: 4.5vh;
+    border: none;
+    font-family: $mainFont;
+    color: $fontDark;
+    background-color: $bkgTransparentLight;
+    border-radius: 0.8vh;
+    text-align: center;
+    padding: 1vh;
+}
+
+.info-box {
+    padding-left: 1vw;
+}
+
+#add-track {
+    height: 30px;
+    width: 30px;
+    border-radius: 15px;
+    background-color: $bkgTransparentOk;
+    border: none;
+    color: $fontLight;
+    font-size: 2vh;
+    margin-left: 1em;
+}
+
+#add-btn {
+    background-color: $bkgTransparentOk;
+    border: none;
+    height: 50px;
+    width: 75%;
+    border-radius: 25px;
+    margin: 0 auto;
+    color: $fontLight;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#add-btn:hover,
+#add-track:hover {
+    background-color: $bkgTransparentOkHover;
+    border: none;
+}
+
+#update-btn {
+    background-color: $bkgTransparentUpdate;
+    border: none;
+    height: 50px;
+    width: 75%;
+    border-radius: 25px;
+    margin: 0 auto;
+    color: $fontLight;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#update-btn:hover {
+    background-color: $bkgTransparentUpdateHover;
+}
+
+@media(min-width: 700px) {
+    .add-frame {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin: 1em;
+    }
+
+    .input-cover-frame {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .input-frontcover-card,
+    .input-backcover-card {
+        height: 100%;
+        width: 15vw;
+        margin-right: 1em;
+    }
+
+    .input-frontcover-card {
+        margin-bottom: 1em;
+    }
+
+    .input-info-card,
+    .input-tracklist-card {
+        width: 30vw;
+        margin-right: 1em;
+    }
+
+    .add-track-text-box {
+        width: 16vw;
+    }
+
+    #add-btn,
+    #update-btn {
+        width: 30%;
+    }
+}
