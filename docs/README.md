@@ -1,17 +1,17 @@
 
 HOUSE OF MUSIC (Proyecto Integrador - Digital House)
 
-<img src="docs/hofm_home.png" width="200">
+<img src="hofm_home.png" width="500">
 
 House of Music es una plataforma online donde podrás encontrar una enorme cantidad de álbumes en formatos CD y Vinilo. Podrás ver las novedades del momento, los best sellers de todo el tiempo, comprar de forma segura y recibirlos en tu domicilio. Nos enfocamos a amantes de la música, melómanos y coleccionistas. Son personas que buscan mejores experiencias musicales con la calidad y calidez que ofrecen estos formatos de audio.
 
-<img src="hofm_detail.png" width="200">
+<img src="hofm_detail.png" width="500">
 
-<img src="hofm_cart.png" width="200">
+<img src="hofm_cart.png" width="500">
 
-<img src="hofm_create.png" width="200">
+<img src="hofm_create.png" width="500">
 
-<img src="hofm_admin.png" width="200">
+<img src="hofm_admin.png" width="500">
 
 Sitios de referencia:
 
