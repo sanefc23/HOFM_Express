@@ -2,34 +2,36 @@
 <div class="background">
     <%- include('partials/nav-bar.ejs') %>
     <form action="/products/all/edit/<%=album.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
-        <div class="frame">
+        <div class="add-frame">
             <div class="input-cover-frame">
                 <div class="input-frontcover-card">
-                    <img id="add-album-icon" src="/images/add-album-cover.png" alt="">
-                    <label class="input-hint">Front Cover</label>
-                    <input type="file" name="front_cover">
+                    <label class="add-cover-label darkFont" for="addCoverInput1">
+                        <img id="add-album-icon" src="/images/add-album-cover.png" alt="">
+                        Front Cover</label>
+                    <input type="file" id="addCoverInput1" name="front_cover">
                 </div>
                 <div class="input-backcover-card">
-                    <img id="add-album-icon" src="/images/add-album-cover.png" alt="">
-                    <label class="input-hint">Back Cover</label>
-                    <input type="file" name="back_cover">
+                    <label class="add-cover-label darkFont" for="addCoverInput2">
+                        <img id="add-album-icon" src="/images/add-album-cover.png" alt="">
+                        Back Cover</label>
+                    <input type="file" id="addCoverInput2" name="back_cover">
                 </div>
             </div>
             <div class="input-info-card">
                 <div class="input-frame">
-                    <label class="input-hint">Artista</label>
-                    <select class="text-box" name="artists_id">
+                    <label class="input-hint darkFont">Artista</label>
+                    <select class="add-text-box" name="artists_id">
                         <option value="<%= album.artist.id %>"><%= album.artist.name %></option>
                         <% artists.forEach(artist => { %>
                         <option value="<%= artist.id %>"><%= artist.name %></option>
                         <% }) %>
                     </select>
-                    <label class="input-hint">Album</label>
-                    <input class="text-box" value="<%= album.title %>" type="text" name="title">
-                    <label class="input-hint">Descripción</label>
-                    <textarea class="textarea-box" placeholder="<%= album.description %>" type="text"
+                    <label class="input-hint darkFont">Album</label>
+                    <input class="add-text-box" value="<%= album.title %>" type="text" name="title">
+                    <label class="input-hint darkFont">Descripción</label>
+                    <textarea class="textarea-box darkFont" placeholder="<%= album.description %>" type="text"
                         name="description"></textarea>
-                    <label class="input-hint">Información Adicional</label>
+                    <label class="input-hint darkFont">Información Adicional</label>
                     <div class="formats">
                         <select class="info-box" name="" id="format">
                             <option value="">Formato</option>
@@ -62,7 +64,7 @@
                     </div>
                 </div>
                 <div class="input-tracklist-frame">
-                    <label class="input-hint">Ingrese track:</label>
+                    <label class="input-hint darkFont">Ingrese track:</label>
                     <div class="formats">
                         <input id="newTrack" class="add-track-text-box" type="text" name="">
                         <button id="add-track" onclick="pushToTracklist">+</button>
@@ -74,4 +76,4 @@
     </form>
     <%- include('partials/footer.ejs') %>
 
-</html>
+    </html>
