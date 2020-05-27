@@ -5,16 +5,16 @@
         <div class="add-frame">
             <div class="input-cover-frame">
                 <div class="input-frontcover-card">
-                    <label class="add-cover-label darkFont" for="addCoverInput">
+                    <label class="add-cover-label darkFont" for="addCoverInput1">
                         <img id="add-album-icon" src="/images/add-album-cover.png" alt="">
                         Front Cover</label>
-                    <input type="file" id="addCoverInput" name="front_cover">
+                    <input type="file" id="addCoverInput1" name="front_cover">
                 </div>
                 <div class="input-backcover-card">
-                    <label class="add-cover-label darkFont" for="addCoverInput">
+                    <label class="add-cover-label darkFont" for="addCoverInput2">
                         <img id="add-album-icon" src="/images/add-album-cover.png" alt="">
                         Back Cover</label>
-                    <input type="file" id="addCoverInput" name="back_cover">
+                    <input type="file" id="addCoverInput2" name="back_cover">
                 </div>
             </div>
             <div class="input-info-card">
@@ -29,7 +29,7 @@
                     <label class="input-hint darkFont">Album</label>
                     <input class="add-text-box" type="text" name="title">
                     <label class="input-hint darkFont">Descripción</label>
-                    <textarea class="textarea-box" type="text" name="description"></textarea>
+                    <textarea class="textarea-box darkFont" type="text" name="description"></textarea>
                     <label class="input-hint darkFont">Información Adicional</label>
                     <div class="formats">
                         <select class="info-box" name="format" id="format">
@@ -66,12 +66,12 @@
                     <label class="input-hint darkFont">Ingrese track:</label>
                     <div class="formats">
                         <input id="newTrack" class="add-track-text-box" type="text" name="">
-                        <button id="add-track" onclick="pushToTracklist">+</button>
+                        <button id="add-track">+</button>
                     </div>
                 </div>
             </div>
         </div>
-        <button id="add-btn" type="submit" onclick="pushAlbumToJSON">Agregar album</button>
+        <button id="add-btn" type="submit">Agregar album</button>
     </form>
     <%- include('partials/footer.ejs') %>
 

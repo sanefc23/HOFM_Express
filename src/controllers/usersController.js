@@ -78,7 +78,7 @@ const usersController = {
         })
         .catch((error) => res.send(error));
     } else {
-      return res.render('loginPage', { registerErrors: [{ msg: "Los campos no pueden estar vacios." }], })
+      return res.render('loginPage', { registerErrors: errors.errors })
     }
   },
 

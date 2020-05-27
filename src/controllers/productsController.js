@@ -31,6 +31,9 @@ const productsController = {
   },
 
   store: (req, res, next) => {
+console.log(req.files);
+
+
     Albums
       .create({
         ...req.body,
