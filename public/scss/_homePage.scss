@@ -17,6 +17,11 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
+    transition: transform .2s;
+}
+
+.product:hover{
+    transform: scale(1.04);
 }
 
 #title {

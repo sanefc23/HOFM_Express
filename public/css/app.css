@@ -22,6 +22,7 @@
     bottom: 0;
   }
 }
+
 .wrapper {
   display: inline-flex;
   width: 100%;
@@ -39,6 +40,11 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
+  transition: transform .2s;
+}
+
+.product:hover {
+  transform: scale(1.04);
 }
 
 #title {
@@ -91,7 +97,7 @@
   border: none;
   border-radius: 2px;
   margin-top: 0.2em;
-  margin-bottom: 0.2em;
+  margin-bottom: .2em;
 }
 
 #update:hover {
@@ -119,42 +125,35 @@
     font-size: 2.5vw;
     padding: 0.6em 0em 0em 0.4em;
   }
-
   #catalog-title {
     font-size: 2.5vw;
     padding: 0.4em 0em 0em 0.7em;
   }
-
   .catalog {
     margin: 0.4em;
     justify-content: flex-center;
   }
-
   .product {
     margin-right: 0.4em;
   }
-
   .album-cover {
     width: 15vw;
   }
-
   .artist,
-.album {
+  .album {
     width: 14vw;
   }
-
   .artist {
     font-weight: bold;
   }
-
   #update {
     width: 15vw;
   }
-
   .delete {
     width: 15vw;
   }
 }
+
 .frame {
   display: flex;
   flex-wrap: wrap;
@@ -247,40 +246,36 @@
   .login-image {
     width: 30vw;
   }
-
   .login-form {
     height: 40vh;
     width: 30vw;
   }
-
   .form-frame {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
   }
-
   .login-text-box {
     width: 20vw;
   }
-
   .login,
-.recover-password {
+  .recover-password {
     width: 15vw;
   }
-
   .action-buttons {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
   }
 }
+
 /*---------Navbar-------*/
 .navbar {
   width: 100vw;
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
   height: 6vh;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .logo {
@@ -336,21 +331,19 @@
   .navbar {
     height: 7vh;
   }
-
   .logo {
     height: 6vh;
     margin: 0 auto;
   }
-
   .cart-logo,
-.user-logo {
+  .user-logo {
     width: 2.4vw;
   }
-
   .navbar-collapse {
     background-color: transparent;
   }
 }
+
 .detail-frame {
   display: flex;
   flex-wrap: wrap;
@@ -444,16 +437,13 @@ h5 {
     flex-direction: row;
     margin: 0 auto;
   }
-
   .detail-child-frame1 {
     width: 60%;
   }
-
   .detail-tracklist {
     margin-top: 1em;
     margin-left: 2em;
   }
-
   .detail-child-frame2 {
     width: 40%;
     display: flex;
@@ -461,36 +451,31 @@ h5 {
     justify-content: flex-start;
     align-items: center;
   }
-
   .detail-info {
     font-size: 1.5vw;
   }
-
   .detail-row-mini-cards {
     width: 55vw;
     padding-top: 1.4vh;
     padding-bottom: 1.4vh;
   }
-
   .detail-info-mini-cards,
-.detail-addToCartButton {
+  .detail-addToCartButton {
     width: 13vw;
     height: 8vh;
     margin-bottom: 0;
   }
-
   .fa-star {
     margin: 0.2em;
   }
-
   .detail-addToCart-icon {
     width: 2.2vw;
   }
-
   .detail-album-cover {
     width: 27vw;
   }
 }
+
 .register-form {
   display: flex;
   flex-direction: column;
@@ -545,29 +530,27 @@ h5 {
   .register-form {
     width: 70vw;
   }
-
   .text-box {
     width: 60vw;
   }
-
   #register-btn {
     width: 70vw;
   }
 }
+
 @media (min-width: 700px) {
   .register-form {
     width: 45vw;
   }
-
   .text-box {
     width: 35vw;
   }
-
   #register-btn {
     width: 45vw;
     margin: 0 auto;
   }
 }
+
 .add-frame {
   display: flex;
   flex-direction: column;
@@ -606,7 +589,7 @@ h5 {
   align-items: center;
   font-size: 2vh;
   margin-top: 1vh;
-  margin-bottom: 0.3vh;
+  margin-bottom: .3vh;
 }
 
 .input-info-card,
@@ -657,7 +640,7 @@ option {
 
 .textarea-box {
   height: 12vh;
-  padding: 0.5em;
+  padding: .5em;
 }
 
 .formats {
@@ -736,38 +719,33 @@ option {
     justify-content: center;
     margin: 1em;
   }
-
   .input-cover-frame {
     display: flex;
     flex-direction: column;
   }
-
   .input-frontcover-card,
-.input-backcover-card {
+  .input-backcover-card {
     height: 100%;
     width: 15vw;
     margin-right: 1em;
   }
-
   .input-frontcover-card {
     margin-bottom: 1em;
   }
-
   .input-info-card,
-.input-tracklist-card {
+  .input-tracklist-card {
     width: 30vw;
     margin-right: 1em;
   }
-
   .add-track-text-box {
     width: 16vw;
   }
-
   #add-btn,
-#update-btn {
+  #update-btn {
     width: 30%;
   }
 }
+
 .cartFrame {
   margin: 0 auto;
   margin-top: 1em;
@@ -826,7 +804,7 @@ option {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  margin-right: 0.6em;
+  margin-right: .6em;
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 0.6em;
   width: 24vw;
@@ -895,33 +873,29 @@ hr {
   .cartFrame {
     width: 70vw;
   }
-
   .cartItemCover {
     width: 10vw;
   }
-
   .cartItemTitle {
     width: 22vw;
   }
-
   #cart-price,
-#cart-format,
-#cart-units {
+  #cart-format,
+  #cart-units {
     width: 8vw;
     height: 3vw;
   }
-
   .delete_item {
     width: 2vw;
     height: 2vw;
   }
-
   .go-back,
-.buy {
+  .buy {
     width: 30vw;
     font-size: 16px;
   }
 }
+
 .user-card {
   background-color: rgba(255, 255, 255, 0.7);
   border-radius: 20px;
@@ -970,14 +944,14 @@ hr {
     width: 40vw;
     height: 55vh;
   }
-
   #editprofile-btn,
-#logout-btn {
+  #logout-btn {
     font-size: 2vh;
     height: 6vh;
     width: 16vw;
   }
 }
+
 * {
   padding: 0;
   box-sizing: border-box;
@@ -1023,5 +997,3 @@ a:visited {
   color: white;
   margin: 0 auto;
 }
-
-/*# sourceMappingURL=app.css.map */
